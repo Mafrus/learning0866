@@ -1,0 +1,82 @@
+body .text1, body .text2, body .text3 {
+    font: normal 16px Arial, sans-serif;
+    color: #000;
+}
+body .text1,
+body .text2,
+body .text3 {
+    font: normal 16px Arial, sans-serif !important;
+    color: #000;}
+    
+    
+<link rel="stylesheet" href="css/style.css">
+
+@import "style/style.css" screen;
+
+<style>
+    …
+</style>
+
+
+background: red;
+background: green;
+background: blue;
+
+
+a#ssylka1.button.blue[href="..."]
+
+<a href="..." id="ssylka1" class="button blue">...</a>
+
+
+#id {...}
+#id.class {...}
+
+
+#leftcol p
+#rightcol p
+
+#qwe123
+
+[id='qwe123']
+
+table > th    = false
+tr > th       = true
+
+th + td
+th ~ td 
+
+
+1000
+
+1000px
+
+10vw
+
+33.3333333334%
+
+.5px
+0.5px
+
+0.335
+
+0px
+0
+
+calc(50% - 5px)
+
+#fcfcfc
+
+#fca == ffccaa
+#000 == 000000
+#fff == ffffff
+
+rgb(0,127,255)
+
+rgba(0,127,255,.5)
+
+display: block | flex | inline | table-cell
+
+inherit
+initial
+unset
+
