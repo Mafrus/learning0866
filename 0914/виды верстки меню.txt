@@ -1,0 +1,48 @@
+<nav>
+    <div>
+        <a href="...">...</a>
+        <a href="...">...</a>
+        <a href="...">...</a>
+        <a href="...">...</a>
+        <a href="...">...</a>
+        <div>
+            <a href="...">...</a>
+            <a href="...">...</a>
+            <a href="...">...</a>
+            <a href="...">...</a>
+            <a href="...">...</a>
+        </div>
+    </div>
+</nav>
+
+<nav>
+    <a href="..." class="level1">...</a>
+    <a href="..." class="level1">...</a>
+    <a href="..." class="level1">...</a>
+    <a href="..." class="level1">...</a>
+    <a href="..." class="level1">...</a>
+    <a href="..." class="level2">...</a>
+    <a href="..." class="level2">...</a>
+    <a href="..." class="level2">...</a>
+    <a href="..." class="level2">...</a>
+    <a href="..." class="level2">...</a>
+</nav>
+
+<nav>
+    <ul>
+        <li><a href="...">...</a></li>
+        <li><a href="...">...</a></li>
+        <li><a href="...">...</a></li>
+        <li><a href="...">...</a></li>
+        <li><a href="...">...</a></li>
+        <li>
+            <ul>
+                <li><a href="...">...</a></li>
+                <li><a href="...">...</a></li>
+                <li><a href="...">...</a></li>
+                <li><a href="...">...</a></li>
+                <li><a href="...">...</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

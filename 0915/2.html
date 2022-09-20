@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Форма и ее элементы</title>
+    </head>
+    
+    <body>
+        <form action="" method="GET" name="form1">
+            <input type="text" name="text1" tabindex="2">
+            <br>
+            <input type="text" name="text2" tabindex="1">
+            <br>
+            <input type="hidden" name="hiddenfield" value="000">
+            <br>
+            <button type="submit">qwe <img src="1.png" width="100"> rty</button>
+            <button type="reset">КНОПКА 2</button>
+            <button type="button" onclick="document.forms.form2.submit()" tabindex="5">
+                <b>
+                    <i>
+                        <span>КНОПКА 3</span>
+                    </i>
+                </b>
+            </button>
+        </form>
+        
+        <form action="" method="GET" name="form2">
+            <input type="text" name="text1" tabindex="2">
+            <br>
+            <input type="text" name="text2" tabindex="1">
+            <br>
+            <input type="hidden" name="hiddenfield" value="111">
+            <br>
+            <button type="submit">qwe <img src="1.png" width="100"> rty</button>
+            <button type="reset">КНОПКА 2</button>
+            <button type="button" onclick="alert('Эта кнопка ничего не делает!')" tabindex="5">
+                <b>
+                    <i>
+                        <span>КНОПКА 3</span>
+                    </i>
+                </b>
+            </button>
+        </form>
+    </body>
+</html>

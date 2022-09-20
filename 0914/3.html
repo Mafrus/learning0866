@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Таблица</title>
+        
+        <style>
+            td,th {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <table>
+            <caption>Заголовок</caption>
+            
+            <thead>
+                <tr>
+                    <th>11</th>
+                    <th>12</th>
+                    <th>13</th>
+                    <th>14</th>
+                    <th>15</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <th rowspan="3">21</th>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <!--th>31</th-->
+                    <td>32<br>32<br>32<br>32</td>
+                    <td>33333333333333</td>
+                    <td colspan="2" rowspan="2">34</td>
+                    <!--td>35</td-->
+                </tr>
+                <tr>
+                    <!--th>41</th-->
+                    <td>42</td>
+                    <td>43</td>
+                    <!--td>44</td>
+                    <td>45</td-->
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <tr>
+                    <th colspan="5">51</th>
+                    <!--th>52</th>
+                    <th>53</th>
+                    <th>54</th>
+                    <th>55</th-->
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
