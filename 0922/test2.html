@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Обижаем Лермонтова</title>
+    </head>
+    <body>
+	<style>
+		.cursive {
+        font-weight: normal;
+        color:red;
+		font-style: italic;
+		}
+		
+		.bold {
+        font-weight: bold;
+        color: #de77d1;
+		font-style: normal;
+		}
+		
+		#em {
+        font-weight: normal;
+        color: #1fc4b7;
+		text-decoration: underline;
+		}
+		
+		.small {
+        font-weight: normal;
+        color: #6fe544;
+		font-size: 13pt;
+		}
+		
+		.underlined {
+        font-weight: normal;
+        color: #de751f;
+		text-decoration: underline;
+		}
+		/*#small {
+        font-weight: normal;
+        color: #6fe544;
+		font-size: 13pt;
+		}*/
+		
+		.strong {
+        font-weight: bolder;
+        color:lime;
+		}
+		
+		.u {
+        font-weight: normal;
+        color: blue;
+		text-decoration: underline;
+		}
+		
+		#s{
+        font-weight: normal;
+        color:#741dbc;
+		text-decoration: line-through;
+		}
+		
+		.i{
+        font-style:italic;
+        color:#de401f;
+		/*text-decoration: line-through;*/
+		}
+		</style>
+<!--
+1) Заменяем все теги внутри <p> на <span>. Кроме <br>, разумеется.
+2) Добавляем к спанам классы и иды по потребности и прописываем стили.
+3) Текст в спанах со стилями должен выглядеть так же, как теги <b>, <i>, <strong>, <em>, <s>, <small> сейчас.
+4*) Можно раскрасить в разные цвета по вашему вкусу.
+-->
+        <h1>Михаил Лермонтов</h1>
+        <h2><a href="https://www.culture.ru/poems/37119/parus">Парус</a></h2>
+        <p><span class="cursive">Белеет</span> <span class="bold">парус</span> одинокой<br>
+        В тумане моря <span class="cursive">голубом</span>!..<br>
+        <span id="em">Что</span> ищет <span class="bold">он</span> в стране <span class="small">далекой</span>?<br>
+        <span class="underlined">Что</span> кинул <span class="bold">он</span> в краю <span class="small">родном</span>?..</p>
+        
+        <p>Играют <span class="strong">волны</span> — <span class="strong">ветер</span> свищет,<br>
+        И <span class="strong">мачта</span> гнется и скрыпит…<br>
+        Увы! <span class="u">Он счастия не ищет<br>
+        И не от счастия бежит!</span></p>
+        
+        <p><span id="s">Под ним струя <span class="i">светлей лазури</span>,<br>
+        Над ним луч солнца <span class="i">золотой</span>…</span><br>
+        А он, мятежный, просит бури,<br>
+        Как будто в бурях есть покой!</p>
+        
+        <h6>1832 г.</h6>
+    </body>
+</html>

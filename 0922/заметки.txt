@@ -1,0 +1,19 @@
+font: normal 16px Arial, sans-serif;
+
+
+font: normal 16px arial, sans-serif;
+
+FoNt-FaMiLy:
+
+
+span + .blue {}
+
+.em + .strong {}
+
+
+inherit
+
+%% => (W блока - W картинки)
+
+мультифон!
+
