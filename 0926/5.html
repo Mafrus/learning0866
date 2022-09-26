@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Оформление блока</title>
+        
+        <style>
+            body {
+                margin: 0;
+            }
+            div {
+                margin: 100px;
+                padding: 100px;
+            }
+            .outer {
+                background: pink;
+            }
+            .inner {
+                width: 300px;
+                height: 200px;
+                padding: 0;
+                margin: 0;
+                background: cyan;
+                /*border: 30px solid transparent;*/
+                /*border: 3px dashed black;*/
+                /*border-bottom: 300px solid red;
+                border-top: 80px solid blue;*/
+                /*outline: 3px dashed red;*/
+                /*border-radius: 25px;*/
+                box-shadow: 15px 15px 10px 0 rgba(255,0,0,.5),
+                            15px -15px 10px 0 rgba(0,255,0,.5),
+                            -15px 15px 10px 0 rgba(0,0,255,.5),
+                            -15px -15px 10px 0 rgba(0,0,0,.5);
+                /*box-shadow: 5px 5px 10px 0 rgba(0,0,0,.5);*/
+                /*box-shadow: 5px 5px 0 10px rgba(0,0,0,.5);*/
+                /*box-shadow: 5px 5px 10px 10px rgba(0,0,0,.5);*/
+            }
+            /*
+            .inner:hover {
+                box-shadow: 35px 35px 0 0 rgba(0,0,0,.5);
+            }
+            */
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="inner"></div>
+            <!-- <div class="inner"></div> -->
+        </div>
+    </body>
+</html>

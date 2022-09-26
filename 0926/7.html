@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Не таблица</title>
+        
+        <style>
+            .table {
+                /*border-collapse: collapse;*/
+                outline: 1px solid black;
+                /*display: table;*/
+                display: inline-block;
+            }
+            .tr {
+                /*display: table-row;*/
+            }
+            .td {
+                /*display: table-cell;*/
+                display: inline-block;
+                height: 100px;
+                /*line-height: 100px;*/
+                line-height: 110px;
+                width: 100px;
+                text-align: center;
+                vertical-align: top;
+                font-size: 60px;
+                padding: 1px;
+            }
+            .tr:nth-child(even) .td:nth-child(odd),
+            .tr:nth-child(odd) .td:nth-child(even) {
+                background: gray;
+            }
+            .th {
+                background: lightgray;
+                /*display: table-cell;*/
+                display: inline-block;
+                height: 100px;
+                line-height: 100px;
+                width: 100px;
+                font-weight: bold;
+                text-align: center;
+                vertical-align: middle;
+                padding: 1px;
+            }
+            .tr:first-child .th, .tr:last-child .th {
+                height: 50px;
+                line-height: 50px;
+            }
+            .th:first-child, .th:last-child {
+                width: 50px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="table">
+            <div class="tr">
+                <div class="th"></div><!--
+                --><div class="th">A</div><!--
+                --><div class="th">B</div><!--
+                --><div class="th">C</div><!--
+                --><div class="th">D</div><!--
+                --><div class="th">E</div><!--
+                --><div class="th">F</div><!--
+                --><div class="th">G</div><!--
+                --><div class="th">H</div><!--
+                --><div class="th"></div>
+            </div>
+            <div class="tr">
+                <div class="th">8</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">8</div>
+            </div>
+            <div class="tr">
+                <div class="th">7</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">7</div>
+            </div>
+            <div class="tr">
+                <div class="th">6</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">6</div>
+            </div>
+            <div class="tr">
+                <div class="th">5</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">5</div>
+            </div>
+            <div class="tr">
+                <div class="th">4</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">4</div>
+            </div>
+            <div class="tr">
+                <div class="th">3</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">3</div>
+            </div>
+            <div class="tr">
+                <div class="th">2</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">2</div>
+            </div>
+            <div class="tr">
+                <div class="th">1</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td">&#9812;</div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="td"></div><!--
+                --><div class="th">1</div>
+            </div>
+            <div class="tr">
+                <div class="th"></div><!--
+                --><div class="th">A</div><!--
+                --><div class="th">B</div><!--
+                --><div class="th">C</div><!--
+                --><div class="th">D</div><!--
+                --><div class="th">E</div><!--
+                --><div class="th">F</div><!--
+                --><div class="th">G</div><!--
+                --><div class="th">H</div><!--
+                --><div class="th"></div>
+            </div>
+        </div>
+    </body>
+</html>
