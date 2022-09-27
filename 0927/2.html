@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Первый способ прижать футер</title>
+        
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                font: 20px/30px Arial;
+                min-height: 100%;
+                position: relative;
+            }
+            header {
+                height: 100px;
+                background: pink;
+            }
+            footer {
+                height: 100px;
+                background: gray;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            main {
+                padding-bottom: 100px;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>ШАПКА СТРАНИЦЫ</header>
+        
+        <main>
+            Основная часть страницы, контент и всё такое...<br>
+            Основная часть страницы, контент и всё такое...<br>
+        </main>
+        
+        <footer>ПОДВАЛ СТРАНИЦЫ</footer>
+    </body>
+</html>

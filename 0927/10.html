@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Float</title>
+        
+        <style>
+            .outer {
+                background: pink;
+                margin: 100px;
+                padding: 100px;
+                border: 1px solid black;
+                /*overflow: hidden;*/
+                display: table;
+            }
+            .inner {
+                background: green;
+                padding: 100px;
+                border: 1px solid black;
+                float: left;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="inner">Какой-нибудь текст</div>
+            <div class="inner">Какой-нибудь текст</div>
+        </div>
+        <div class="outer"></div>
+    </body>
+</html>

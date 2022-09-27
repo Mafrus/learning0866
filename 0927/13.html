@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Position</title>
+        
+        <style>
+            .outer {
+                background: pink;
+                margin: 300px 100px;
+                padding: 100px;
+                border: 1px solid black;
+                height: 1500px;
+            }
+            .inner {
+                background: green;
+                padding: 100px;
+                border: 1px solid black;
+                position: sticky;
+                top: 100px;
+            }
+            .inner:hover {
+                position:fixed;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="inner">Какой-нибудь текст</div>
+        </div>
+        <div class="outer"></div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Checkboxes</title>
+        
+        <style>
+            div {
+                width: 300px;
+                height: 200px;
+                margin: 50px;
+                display: none;
+            }
+            .red {
+                background: red;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+            #ch1:checked ~ .red,
+            #ch2:checked ~ .green,
+            #ch3:checked ~ .blue {
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <input type="radio" id="ch1" name="test"><label for="ch1"> RED</label><br>
+        <input type="radio" id="ch2" name="test"><label for="ch2"> GREEN</label><br>
+        <input type="radio" id="ch3" name="test"><label for="ch3"> BLUE</label><br>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </body>
+</html>
