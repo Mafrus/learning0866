@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Совсем не таблица</title>
+        
+        <style>
+            .table {
+                outline: 1px solid black;
+                display: inline-block;
+                width: 920px;
+            }
+            ul {
+                display: inline-block;
+                width: 52px;
+                margin: 0;
+                padding: 0;
+                vertical-align: top;
+            }
+            .tr {
+                width: 102px;
+            }
+            li {
+                display: block;
+                height: 100px;
+                font-size: 60px;
+                line-height: 110px;
+                text-align: center;
+                padding: 1px;
+            }
+            .th {
+                background: lightgray;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 100px;
+            }
+            .th:first-child,
+            .th:last-child {
+                height: 50px;
+                line-height: 50px;
+            }
+            .tr:nth-child(even) .td:nth-child(odd),
+            .tr:nth-child(odd) .td:nth-child(even) {
+                background: gray;
+            }
+            .tr:first-child .th, .tr:last-child .th {
+                height: 50px;
+                line-height: 50px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="table">
+            <ul>
+                <li class="th"></li>
+                <li class="th">8</li>
+                <li class="th">7</li>
+                <li class="th">6</li>
+                <li class="th">5</li>
+                <li class="th">4</li>
+                <li class="th">3</li>
+                <li class="th">2</li>
+                <li class="th">1</li>
+                <li class="th"></li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">A</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">A</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">B</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">B</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">C</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">C</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">D</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">D</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">E</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td">&#9812;</li>
+                <li class="th">E</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">F</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">F</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">G</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">G</li>
+            </ul><!--
+            --><ul class="tr">
+                <li class="th">H</li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="td"></li>
+                <li class="th">H</li>
+            </ul><!--
+            --><ul>
+                <li class="th"></li>
+                <li class="th">8</li>
+                <li class="th">7</li>
+                <li class="th">6</li>
+                <li class="th">5</li>
+                <li class="th">4</li>
+                <li class="th">3</li>
+                <li class="th">2</li>
+                <li class="th">1</li>
+                <li class="th"></li>
+            </ul>
+        </div>
+    </body>
+</html>
