@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Домашнее задание</title>
+        
+        <style>
+            @font-face {
+                font-family: 'Veles';
+                src: url('Veles-Bold.woff2') format('woff2');
+                font-weight: normal;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Veles';
+                src: url('Veles-Regular.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'icomoon';
+                src: url('icomoon.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                margin: 0;
+                font: 20px / 40px 'icomoon', 'Veles';
+            }
+            p {
+                width: 550px;
+                margin-left: calc(50% - 350px);
+            }
+            p:nth-child(even) {
+                margin-left: calc(50% - 200px);
+            }
+            em {
+                color: blue;
+            }
+            span {
+                margin-left: 30px;
+            }
+            span::before {
+                content: '\e913';
+                color: blue;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            h1, h3 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+<h1>Песнь о вещем Олеге</h1>
+
+<h3>Стихотворение Александра Пушкина</h3>
+
+<p>Как ныне сбирается вещий Олег<br>
+<span>Отмстить неразумным хозарам:</span>&#xe901;<br>
+Их села и нивы за буйный набег<br>
+<span>Обрек он мечам и пожарам;</span><br>
+С дружиной своей, в цареградской броне,<br>
+Князь по полю едет на верном коне.</p>
+    </body>
+</html>
