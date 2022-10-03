@@ -13,18 +13,30 @@
                 background: lightgray;
                 width: 800px;
                 height: 600px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                /*grid-template-areas: 'q q q q' 'w w . e' 'r r r r';*/
             }
             .blue {
                 background: blue;
+                /*grid-area: q;*/
+                grid-area: 1 / 1 / 2 / 5;
             }
             .red {
-                background: blue;
+                background: red;
+                /*grid-area: e;*/
+                grid-area: 2 / 4 / 3 / 5;
             }
             .green {
-                background: blue;
+                background: green;
+                /*grid-area: r;*/
+                grid-area: 3 / 1 / 4 / 5;
             }
             .yellow {
-                background: blue;
+                background: yellow;
+                /*grid-area: w;*/
+                grid-area: 2 / 1 / 3 / 3;
             }
         </style>
     </head>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Grid-chess</title>
+        
+        <style>
+            .table {
+                outline: 1px solid black;
+                display: grid;
+                width: 920px;
+                height: 920px;
+                background: lightgray;
+                grid-template-rows: 52px repeat(8, 1fr) 52px;
+                grid-template-columns: 52px repeat(8, 1fr) 52px;
+            }
+            .field {
+                grid-area: 2/2/10/10;
+                display: grid;
+                grid-template-rows: repeat(8, 1fr);
+                grid-template-columns: repeat(8, 1fr);
+            }
+            .th {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+            }
+            .td {
+                flex: none;
+                width: 102px;
+                height: 102px;
+                background: gray;
+                font-size: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .evenodd {
+                background: white;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="table">
+            <div class="th"></div>
+            <div class="th">A</div>
+            <div class="th">B</div>
+            <div class="th">C</div>
+            <div class="th">D</div>
+            <div class="th">E</div>
+            <div class="th">F</div>
+            <div class="th">G</div>
+            <div class="th">H</div>
+            <div class="th"></div>
+            <div class="th">8</div>
+            <div class="th">8</div>
+            <div class="th">7</div>
+            <div class="th">7</div>
+            <div class="th">6</div>
+            <div class="th">6</div>
+            <div class="th">5</div>
+            <div class="th">5</div>
+            <div class="th">4</div>
+            <div class="th">4</div>
+            <div class="th">3</div>
+            <div class="th">3</div>
+            <div class="th">2</div>
+            <div class="th">2</div>
+            <div class="th">1</div>
+            <div class="th">1</div>
+            <div class="th"></div>
+            <div class="th">A</div>
+            <div class="th">B</div>
+            <div class="th">C</div>
+            <div class="th">D</div>
+            <div class="th">E</div>
+            <div class="th">F</div>
+            <div class="th">G</div>
+            <div class="th">H</div>
+            <div class="th"></div>
+            <div class="field">
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td">&#9812;</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+            </div>
+        </div>
+    </body>
+</html>
