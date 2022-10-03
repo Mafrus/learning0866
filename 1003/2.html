@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Grid</title>
+        
+        <style>
+            .grid {
+                display: grid;
+                background: pink;
+                width: 800px;
+                height: 800px;
+                /*grid-template-columns: repeat(4, 200px);
+                grid-template-rows: repeat(4, 200px);
+                grid-template-areas: "red    red   red   red"
+                                     "yellow .     black ."
+                                     "yellow green .     blue"
+                                     "yellow .     .     blue";*/
+                /*grid-template: [header-top] "a b c" 200px [header-bottom]
+                               [main-top] ". d e" 1fr [main-bottom]
+                               / auto 1fr auto;*/
+                grid-auto-flow: row;
+                grid-template-columns: repeat(4, 1fr);
+                /*grid-template-rows: repeat(4, 1fr);*/
+            }
+            .grid > div {
+                width: 200px;
+                height: 200px;
+            }
+            .red {
+                background: red;
+                /*grid-area: a;*/
+            }
+            .blue {
+                background: blue;
+                /*grid-area: b;*/
+            }
+            .green {
+                background: green;
+                /*grid-area: c;*/
+            }
+            .black {
+                background: black;
+                /*grid-column-start: 2;
+                grid-column-end: 4;*/
+                /*grid-area: d;*/
+            }
+            .yellow {
+                background: yellow;
+                /*grid-column-end: 2;*/
+                /*grid-area: e;*/
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="grid">
+            <div class="red"></div>
+            <div class="blue"></div>
+            <div class="green"></div>
+            <div class="black"></div>
+            <div class="yellow"></div>
+            <!-- <div class="red"></div> -->
+            <!-- <div class="blue"></div> -->
+            <!-- <div class="green"></div> -->
+            <!-- <div class="black"></div> -->
+            <!-- <div class="yellow"></div> -->
+        </div>
+    </body>
+</html>

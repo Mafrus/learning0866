@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Flex-chess 2</title>
+        
+        <style>
+            .table {
+                outline: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                width: 920px;
+                height: 920px;
+                background: lightgray;
+            }
+            .row {
+                display: flex;
+            }
+            .row:first-child,
+            .row:last-child {
+                height: 52px;
+            }
+            .td {
+                flex: none;
+                width: 102px;
+                height: 102px;
+                background: gray;
+                font-size: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .evenodd {
+                background: white;
+            }
+            .th {
+                flex: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+            }
+            .th:first-child,
+            .th:last-child {
+                width: 52px;
+                flex: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="table">
+            <div class="row">
+                <div class="th"></div>
+                <div class="th">A</div>
+                <div class="th">B</div>
+                <div class="th">C</div>
+                <div class="th">D</div>
+                <div class="th">E</div>
+                <div class="th">F</div>
+                <div class="th">G</div>
+                <div class="th">H</div>
+                <div class="th"></div>
+            </div>
+            <div class="row">
+                <div class="th">8</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="th">8</div>
+            </div>
+            <div class="row">
+                <div class="th">7</div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="th">7</div>
+            </div>
+            <div class="row">
+                <div class="th">6</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="th">6</div>
+            </div>
+            <div class="row">
+                <div class="th">5</div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="th">5</div>
+            </div>
+            <div class="row">
+                <div class="th">4</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="th">4</div>
+            </div>
+            <div class="row">
+                <div class="th">3</div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="th">3</div>
+            </div>
+            <div class="row">   
+                <div class="th">2</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="th">2</div>
+            </div>
+            <div class="row">
+                <div class="th">1</div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="td">&#9812;</div>
+                <div class="td evenodd"></div>
+                <div class="td"></div>
+                <div class="td evenodd"></div>
+                <div class="th">1</div>
+            </div>
+            <div class="row">
+                <div class="th"></div>
+                <div class="th">A</div>
+                <div class="th">B</div>
+                <div class="th">C</div>
+                <div class="th">D</div>
+                <div class="th">E</div>
+                <div class="th">F</div>
+                <div class="th">G</div>
+                <div class="th">H</div>
+                <div class="th"></div>
+            </div>
+        </div>
+    </body>
+</html>
