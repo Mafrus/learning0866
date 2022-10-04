@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Transforms</title>
+        
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background: pink;
+                margin: 150px;
+                border: 1px solid black;
+                font-size: 30px;
+            }
+            .transed {
+                transition: transform 2s ease;
+                /*transform: rotate(0deg);*/
+            }
+            .raw {
+                transition: transform 1s steps(9, end) 1s;
+                /*transform: translate(0, 0);*/
+            }
+            body:hover .transed {
+                transform: rotate(45deg);
+            }
+            body:hover .raw {
+                transform: translate(100px, 100px);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="transed">QWERTY</div>
+        <div class="raw">123456</div>
+    </body>
+</html>
