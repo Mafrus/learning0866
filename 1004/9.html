@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Transforms</title>
+        
+        <style>
+            @keyframes mychanges {
+                0% {
+                    background-position: 0 0, 417px -1000px, -417px 0;
+                }
+                25% {
+                    background-position: 0 0, 417px 0, -417px -1000px;
+                }
+                33.333333% {
+                    background-position: -417px 0, 0 0, 417px -1000px;
+                }
+                58.333333% {
+                    background-position: -417px -1000px, 0 0, 417px 0;
+                }
+                66.666666% {
+                    background-position: 417px -1000px, -417px 0, 0 0;
+                }
+                91.666666% {
+                    background-position: 417px 0, -417px -1000px, 0 0;
+                }
+                100% {
+                    background-position: 0 0, 417px -1000px, -417px 0;
+                }
+            }
+            .outer {
+                width: 417px;
+                height: 585px;
+                margin: 100px auto;
+                padding: 100px;
+                background: pink;
+            }
+            .inner {
+                width: 417px;
+                height: 585px;
+                outline: 2px solid black;
+                background: url('1.jpg') 0 0 no-repeat, url('2.jpg') 417px -1000px no-repeat, url('3.jpg'), -417px 0 no-repeat, white;
+                animation: mychanges 6s infinite;
+            }
+            .inner:hover {
+                animation-play-state: paused;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+    </body>
+</html>

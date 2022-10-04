@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Media</title>
+        
+        <style>
+            .outer {
+                padding: 100px;
+                margin: 100px auto;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            .outer > div {
+                width: 300px;
+                height: 300px;
+            }
+            .red {
+                background: red;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+            @media screen and (max-width: 1200px) {
+                .outer > div {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            @media screen and (max-width: 900px) {
+                .outer > div {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                .outer {
+                    display: block;
+                }
+                .outer > div {
+                    margin: 100px auto;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class="red"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+        </div>
+    </body>
+</html>

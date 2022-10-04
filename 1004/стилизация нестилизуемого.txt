@@ -1,0 +1,51 @@
+1. Селект.
+
+<div class="select">
+    <div class="current">current value</div>
+    <div class="list">
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+        <div class="option">option value</div>
+    </div>
+</div>
+
+2. Чекбокс (радиокнопка - аналогично).
+
+<input type="checkbox" style="transform:rotateY(90deg)" id="ID">
+<label for="ID">label text</label>
+
+label {
+    background-image:url(empty.png)
+}
+#ID:checked ~ label {
+    background-image:url(checked.png)
+}
+
+3. Плейсхолдер.
+
+<div class="desk">
+    <div class="placeholder">placeholder</div>
+    <input type="text">
+</div>
+
+input {
+    background: transparent;
+    position: absolute;
+}
+
+4. Списки с произвольными маркерами.
+
+li {
+    list-style: none;
+    position: relative;
+    padding: ...;
+}
+li::before {
+    position: absolute;
+    content: '...';
+    background: ...;
+}
