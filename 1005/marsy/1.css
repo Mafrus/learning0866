@@ -1,0 +1,83 @@
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src: url('OpenSansCondensed-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src: url('OpenSansCondensed-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+/* global reset */
+html, body, body div, span, label, h1, h2, h3, h4, h5, h6, p, a, em, img, s, strong, b, u, i, dl, dt, dd, ol, ul, li, button, article, aside, footer, header, nav, section, input {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+	list-style: none;
+}
+html * {
+	max-height: 10000000px;
+}
+/* commons */
+a {
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+.hidden_element {
+	display: none !important;
+}
+h1 {
+    font-size: 37px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+h2 {
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* html */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font: normal 21px/24px 'Open Sans Condensed';
+    background: #ffecc2;
+}
+.wrapper {
+    min-height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+header {
+    height: 469px;
+    background: url('header_bg.jpg') center center no-repeat;
+    flex: none;
+}
+footer {
+    height: 431px;
+    background: url('footer_bg.jpg') center center no-repeat;
+    flex: none;
+}
+main {
+    flex: auto;
+}
+
+
+
