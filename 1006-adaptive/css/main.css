@@ -5,7 +5,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Medium.woff2') format('woff2');
@@ -13,7 +12,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.woff2') format('woff2');
@@ -21,6 +19,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 /* global reset */
 html, body, body div, div, span, label, h1, h2, h3, h4, h5, h6, p, a, em, img, s, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, button, form, fieldset, article, aside, footer, header, main, nav, section, input, textarea, select, option {
     margin: 0;
@@ -36,6 +35,7 @@ html * {
 /* common */
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 button {
     cursor: pointer;
@@ -52,7 +52,6 @@ h2 {
     letter-spacing: 0.05em;
     color: #000;
 }
-
 .container {
     width: 1140px;
     margin: 0 auto;
@@ -73,6 +72,8 @@ body {
 header {
     height: 116px;
     flex: none;
+    position: relative;
+    z-index: 1;
 }
 footer {
     height: 657px;
@@ -81,14 +82,31 @@ footer {
 }
 main {
     flex: auto;
+    margin-top: -116px;
 }
 
 /* header */
+header .container {
+    height: 48px;
+    padding: 34px 0;
+}
+.logo {
+    float: left;
+    width: 46px;
+    height: 48px;
+    background: url('../images/logo.png') center center no-repeat;
+}
+.user {
+    float: right;
+    width: 34px;
+    height: 48px;
+    background: url('../images/user.png') center center no-repeat;
+}
 
 /* footer */
 .liner {
     height: 0;
-    border: 1px solid rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.4);
 }
 footer button {
     float: right;
@@ -98,7 +116,7 @@ footer button {
     color: #fff;
     text-align: center;
     letter-spacing: 0.04em;
-    margin: 101px 0 106px 408px;
+    margin: 100px 0 106px 408px;
 }
 footer .container {
     padding: 64px 0;
@@ -114,6 +132,22 @@ footer p {
 }
 ol + p {
     opacity: 0.4;
+}
+ol {
+    list-style-type: upper-alpha;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 60px 22px;
+}
+ol li {
+    width: 336px;
+}
+ol li::before {
+    width: 20px;
+    height: 30px;
+    float: left;
+    content: '';
 }
 
 /* main */
