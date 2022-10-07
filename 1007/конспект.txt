@@ -1,0 +1,128 @@
+longLongLongLongName
+long_long_long_long_name
+
+...;
+... {
+    ...
+}
+/*
+...
+//...
+*/
+//...
+//...
+//...
+
+'...'
+"..."
+`...`
+
+let a;
+let b = 2;
+
+const c = 'ЛЮБОЙ ОЧЕНЬ ДЛИННЫЙ НАПРИМЕР ТЕКСТ';
+
+var d;
+var e = '111'
+
+'use strict';
+
+typeof
+
+null;
+
+undefined;
+
+boolean
+true;
+false;
+
+true && false = false
+true || false = true
+ 
+number
+12345;
+0xffa
+0o123
+0b1001
+
+Infinity
+NaN != NaN
+
+isNaN()
+isFinite()
+
+
+bigint
+1234567890123456789012345678901234567890n;
+
+string
+''
+""
+``
+
+`${имя переменной}`;
+\n
+\'
+\"
+\`
+\\
+
+object
+{
+    key1: value1,
+    key2: value2
+};
+{};
+[value0, value1, value2];
+[];
+function(...) {...}
+/.../...;
+
+symbol
+
+alert, prompt, confirm
+alert(текст); --> undefined
+prompt(вопрос); --> ответ || null
+confirm(вопрос); --> true || false
+
+
+
+0, '', null, undefined, NaN --> false
+все остальное --> true
+
+true - 1
+false - 0
+null - 0
+undefined - NaN
+'' - 0
+'1234' - 1234
+'qwer' - NaN
+
+true - 'true'
+null - 'null'
+1234 - '1234'
+undefined - 'undefined'
+{...} - '[object Object]'
+
+(1 + 2) * 3 = 9
+
+10 / 3 = 3.333333
+10 % 3 = 1
+
+<, <=, >, >=
+==, !=, ===, !==
+
+&&, ||
+
+!true = false
+
+!!число == 1
+!!0 === false
+
+x++
+++x
+y--
+--y
+
+1 + + '1' = 2

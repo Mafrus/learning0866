@@ -150,6 +150,46 @@ ol li::before {
 }
 
 /* main */
+.grad {
+    height: 768px;
+    background: linear-gradient(0deg, #EBF3FB 0%, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
+}
+.grad .container {
+    /* overflow: hidden; */
+    padding: 183px 0 94px;
+    height: 491px;
+    background: url('../images/illustration.png') right 183px no-repeat;
+}
+/* .grad .container img { */
+    /* float: right; */
+    /* margin-left: 80px; */
+/* } */
+/* .trio { */
+    /* display: grid; */
+    /* gap: 32px; */
+    /* grid-template-areas: 'a a' 'b c'; */
+/* } */
+/* .first { */
+    /* width: 1140px; */
+    /* height: 480px; */
+    /* border-radius: 10px; */
+    /* grid-area: a; */
+    /* background: red; */
+/* } */
+/* .second { */
+    /* width: 554px; */
+    /* height: 417px; */
+    /* border-radius: 10px; */
+    /* grid-area: b; */
+    /* background: green; */
+/* } */
+/* .third { */
+    /* width: 554px; */
+    /* height: 417px; */
+    /* border-radius: 10px; */
+    /* grid-area: c; */
+    /* background: blue; */
+/* } */
 
 /* adaptive */
 @media screen and (max-width:1204px) {
