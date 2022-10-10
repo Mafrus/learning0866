@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Operators, variables</title>
+        
+        <script>
+            let num = prompt('Введите число');
+            
+            num = +num;
+            
+            /*
+            if (!isNaN(num)) {
+                if (num < 0) {
+                    alert('Это отрицательное число');
+                } else if (num == 0) {
+                    alert('Это ноль');
+                } else {
+                    alert('Это положительное число');
+                }
+            } else {
+                alert('Это не число');
+            }
+            */
+            /*
+            if (num < 0) {
+                alert('Это отрицательное число');
+            } else if (num == 0) {
+                alert('Это ноль');
+            } else if (num > 0) {
+                alert('Это положительное число');
+            } else {
+                alert('Это не число');
+            }*/
+            
+            //if (!isNaN(num) && num > 0 && !(num % 2)) alert('Это положительное четное число');
+            if (!isNaN(num) && num > 0 && !(num % 2)) {
+                alert('Это положительное четное число');
+            } else {
+                console.log('it works');
+                console.info('it works');
+                console.error('it works');
+            }
+            
+            
+        </script>
+    </head>
+    
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Function</title>
+        
+        <script>
+            
+            let a = 1, b = 15, c = 5;
+            
+            //console.log(a);
+            
+            //let my_sum = (q) => q - 10;
+            /*
+            let my_sum = (q) => {
+                return q - 10;
+            };
+            */
+            //console.log(my_sum(b));
+            
+            //console.log(q);
+            //console.log(w);
+            //console.log(c);
+            //console.log(a);
+            
+            
+            /*let global;
+            
+            function f() {
+                let outer;
+                
+                function g() {
+                    let local;
+                }
+            }*/
+            
+            
+            
+            
+            
+            /*
+            let my_sum = function(q) {
+                let c = 10;
+                let a = '123';
+                console.log(a);
+                return q - c;
+            };
+            */
+            /*
+            function my_sum(q) {
+                let c = 10;
+                //console.log(c);
+                //console.log(b);
+                let a = '123';
+                console.log(a);
+                return q - c;
+                console.log("dead code"); // dead code!!!
+            }
+            */
+            function my_sum(f, a) {
+                f(a);
+            }
+            function my_alert(str) {
+                console.log(str);
+            }
+            my_sum(my_alert, 100);
+        </script>
+    </head>
+    
+    <body>
+        
+    </body>
+</html>

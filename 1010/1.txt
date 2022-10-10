@@ -1,0 +1,103 @@
+if (проверяем условие) команда;
+if (проверяем условие) {
+    команда1
+    команда2
+    команда3
+}
+if (проверяем условие) {
+    ...
+} else if (проверяем условие) {
+    ...
+} else {
+    ...
+}
+
+
+... ? ... : ...
+
+
+let a = (x > 0) ? 1 : (x == 0) ? 0 : -1
+
+let a;
+if (x > 0) {
+    a = 1;
+} else {
+    if (x == 0) {
+        a = 0;
+    } else {
+        a = -1;
+    }
+}
+
+&& - первое false или последнее (если все false)
+
+|| - первое true или последнее (если все true)
+
+!
+
+!!
+
+
+switch (x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    //break;
+
+  case 2:  // if (x === 2)
+  case 3:
+    ...
+  case 5:
+    ...
+    //break;
+  default:
+    ...
+}
+
+while (проверяем условие) {...}
+
+do {...} while (проверяем условие)
+
+for (определяем переменную-счетчик; проверяем условие; изменяем переменную-счетчик) {...}
+
+break;
+
+while (...) {
+    ...
+    if (...) break;
+    if (...) continue;
+    ...
+}
+
+out:
+while (...) {
+    ...
+    while (...) {
+        ...
+        break out;
+    }
+}
+
+function my_new_function(arg1, arg2, ...) {
+    ...
+    ...
+    return ...;
+    ... // dead code!!!
+}
+
+
+my_new_function(arg1, arg2, ...);
+
+let global;
+function f() {
+    let outer;
+    function g() {
+        let local;
+    }
+}
+
+let qqq = function(arg1, arg2, ...) {
+    ...
+    ...
+    return ...;
+};
+
