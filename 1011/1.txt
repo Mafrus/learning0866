@@ -1,0 +1,92 @@
+x++ сперва возвращает, потом увеличивает
+++x сперва увеличивает, потом возвращает
+
+y1 = a + b + c + ++x (заменится на x + 1)
+y2 = a + b + c + x++ (заменится на x)
+а потом значение x в обоих случаях увеличится на 1
+y1 > y2
+
+alert(x++)   -->   alert(x); x+=1;
+alert(++x)   -->   x+=1; alert(x);
+
+
+function myfunc(arg1, arg2='default') {...}
+
+myfunc(a, b, c, d)  --> arg1 = a, arg2 = b.
+myfunc() --> arg1 = undefined, arg2 = 'default'.
+
+{
+    if (arg2 === undefined) {
+        выражаем недовольство и возмущение, прекращаем работу функции
+    }
+}
+
+{
+    let correct_arg2 = arg2 || 'default';
+}
+
+{
+    let correct_arg2 = arg2 ?? 'default';
+}
+
+let qwe = alert; // присваиваем функцию, можно делать вызов функции по имени переменной.
+let qwe = alert(); // присваиваем возвращаемое функцией значение, функция исполняется один раз во время присвоения.
+
+let vvv = {
+    key1: value1,
+    key2: value2
+};
+
+let vvv = new Object(a, b, c);
+
+"[object Object]"
+
+const x = {...}; // содержимое объекта может меняться!!!
+
+vvv.key1
+vvv.key1()
+vvv['key1']
+vvv['key1']()
+
+vvv[1]
+vvv[x]
+
+vvv.newattr = value
+delete vvv.newattr
+
+let name = ...;
+let obj = {
+    name: name
+}
+
+let name = ...;
+let obj = {
+    name
+}
+
+for (let i in obj) {
+    obj[i]...
+}
+
+this
+
+-1.23456E-1234
+
+-1.23456 * 10^-1234
+
+0x
+0o
+0b
+
+Number()
+Math()
+
+Math.random()
+
++'1234.5qwe' == NaN
+parseInt('1234.5qwe') == 1234
+parseFloat('1234.5qwe') == 1234.5
+
+for (let char of str) {
+    ...
+}

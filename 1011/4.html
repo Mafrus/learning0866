@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Object</title>
+    
+    <script>
+        function Cat(name, color) {
+            this.name = name;
+            this.color = color;
+            this.say = function() {
+                alert(`Miau! I'm ${this.name}`);
+            };
+        }
+        
+        let mine_cat = new Cat('Barsik', 'black');
+        let your_cat = new Cat('Murzik', 'white');
+    </script>
+</head>
+<body></body>
+</html>

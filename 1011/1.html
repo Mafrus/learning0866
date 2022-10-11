@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Objects</title>
+    
+    <script>
+        let obj = {
+            getName: function() {
+                this.name = prompt('Как вас зовут?');
+            },
+            greet: function() {
+                alert(`Здравствуйте, ${this.name}`);
+            },
+            name: 'John',
+            lastName: 'Doe'
+        }
+        
+        let this_obj = obj;
+        
+        const copy_obj = {};
+        
+        for (let y in obj) {
+            copy_obj[y] = obj[y];
+        }
+        
+        console.log(this_obj === obj);
+        console.log(copy_obj === obj);
+    </script>
+</head>
+<body></body>
+</html>

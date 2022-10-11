@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Object</title>
+    
+    <script>
+        let cat = {
+            name: 'Barsik',
+            color: 'black',
+            age: 5,
+            say: function() {
+                alert(`Miau! I'm ${this.name}`);
+            },
+            house: {
+                material: 'wood',
+                size: 20,
+                color: 'red'
+            }
+        }
+        
+        let mine_cat = cat;
+        /*
+        let your_cat = cat;
+        */
+        let your_cat = deep_copy(cat);
+        
+        your_cat.name = 'Murzik';
+        your_cat.house.color = 'blue';
+        your_cat.house.material = 'metal';
+        alert(mine_cat['name']);
+        
+        function deep_copy(arg) {
+            let res = {};
+            for (let prop in arg) {
+                if (typeof arg[prop] == 'object' && arg[prop] !== null) {
+                    res[prop] = deep_copy(arg[prop]);
+                } else {
+                    res[prop] = arg[prop];
+                }
+            }
+            return res;
+        }
+    </script>
+</head>
+<body></body>
+</html>
