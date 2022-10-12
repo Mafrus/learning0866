@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Objects</title>
+    
+    <script>
+        /*let odyn = {
+            '000': 'qqq',
+            '111': 'www',
+            '222': 'eee'
+        };*/
+        let schtuka = [
+            'qqq',
+            'www',
+            'eee',
+            'rrr',
+            'ttt',
+            'yyy'
+        ];
+        
+        /*console.log(odyn);
+        for (let i in odyn) console.log(i);
+        //for (let i of obj) console.log(i);
+        
+        console.log(schtuka);
+        for (let i in schtuka) console.log(schtuka[i]);
+        for (let i of schtuka) console.log(i);*/
+        
+        /*console.log(schtuka.toString());
+        console.log(schtuka.join(','));
+        console.log(schtuka.join(''));
+        console.log(schtuka.join(' '));
+        console.log(schtuka.join('-|||-'));*/
+        
+        /*schtuka.unshift('rrr', 'ttt', 'yyy');
+        console.log(schtuka.shift());*/
+        
+        
+        //schtuka.length = 1;
+        
+        //schtuka.splice(1, 1, 'aaa', 'sss', 'ddd');
+        //schtuka.splice(-2, 0, 'aaa', 'sss', 'ddd');
+        
+        /*
+        console.log(schtuka.concat([1,2,3]));
+        
+        schtuka.push([1,2,3]);
+        */
+        
+        //schtuka.forEach(item => item += '!');
+        
+        /*let arr = [1,44,21,7,13];
+        arr.sort((a, b) => a - b);
+        console.log(arr);*/
+        
+        /*schtuka.forEach(a => console.log(a.charCodeAt(0)));
+        schtuka.sort((a, b) => +a.charCodeAt(0) - +b.charCodeAt(0));*/
+        
+        /*const yyy = [];
+        yyy.length = 10;
+        yyy[3] = '12345';
+        console.log(yyy);*/
+        
+        
+        //console.log(schtuka.reduceRight((res, item) => res + item, ''));
+        
+        /*let arr = [1,2,3,4,5,6,7,8,9,10];
+        
+        console.log(arr.reduce((sum, item) => sum + item, 0));
+        console.log(arr.reduce((sum, item) => sum * item, 1));*/
+        
+        /*let [a1, a2, a3, ...ostatok] = schtuka;
+        console.log(a1, a2);
+        [a1, a2] = [a2, a1];
+        console.log(a1, a2);
+        //console.log(ostatok);
+        */
+        let options = {
+          title: "Menu",
+          width: 100,
+          height: 200,
+          height1: 300,
+          height2: 400
+        };
+
+        let {title: deepth, width, height, ...ostatok} = options;
+        
+        console.log(deepth, width, height, ostatok);
+        
+        
+        
+        //console.log(schtuka);
+    </script>
+</head>
+<body></body>
+</html>

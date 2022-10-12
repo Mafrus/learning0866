@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Objects</title>
+    
+    <script>
+        let str = 'Мама мыла Раму';
+        
+        //console.log(str.split(' '));
+        
+        //console.log(str.split(' мыла Р'));
+        
+        //console.log(str.charAt(6));
+        //console.log(str[6]);
+        
+        /*console.log(str.indexOf('ам'));
+        console.log(str.indexOf('ам', 2));
+        console.log('Мама мыла Раму'.lastIndexOf('ам'));
+        console.log('Мама мыла Раму'.lastIndexOf('ам', 10));*/
+        
+        /*console.log(str.substring(2, 6));
+        console.log(str.substring(6, 2));
+        console.log(str.substring(-2, 6));
+        console.log(str.substr(2, 6));
+        console.log(str.substr(-2, 6));
+        console.log(str.substr(2, -6));
+        console.log(str.slice(2, 6));
+        console.log(str.slice(6, 2));
+        console.log(str.slice(6, -2));*/
+        
+        alert(str.substring(0, str.indexOf('мыла')) + str.slice(str.indexOf('мыла') + 5));
+        
+    </script>
+</head>
+<body></body>
+</html>
