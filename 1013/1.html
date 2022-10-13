@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Deep functions</title>
+    
+    <script>
+        function factorial(num) {
+            if (num == 1) {
+                return 1;
+            } else {
+                res = factorial(num - 1);
+                return num * res;
+            }
+        }
+        function factorial_cycle(num) {
+            let res = 1;
+            while (num > 1) {
+                res *= num--;
+            }
+            return res;
+        }
+        
+        alert(factorial(6));
+        alert(factorial_cycle(6));
+        
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

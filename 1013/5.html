@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Arrays</title>
+    
+    <script>
+        let arr = [
+            {
+                name: 'apple',
+                price: 100
+            },
+            {
+                name: 'pear',
+                price: 150
+            },
+            {
+                name: 'grape',
+                price: 200
+            }
+        ];
+        
+        console.log(arr);
+        // перебор элементов
+        arr.forEach(item => console.log(`${item.name} стоит ${item.price} рублёв`));
+        
+        // список всех видов фруктов
+        console.log(arr.map(item => item.name));
+        /*console.log(arr.map(function(item){return item.name}));*/
+        
+        // фрукты дороже 100
+        console.log(arr.filter(item => item.price > 100));
+        
+        // сумма цен
+        console.log(arr.reduce((sum, item) => item.price + sum, 0));
+        /*console.log(arr.reduce((sum, item) => sum + item.name, ''));
+        console.log(arr.reduceRight((sum, item) => sum + item.name, ''));*/
+        
+        //arr.filter(item => item.price > 100).reduce((sum, item) => item.price + sum, 0)
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

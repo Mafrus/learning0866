@@ -95,6 +95,13 @@ function f() {
     }
 }
 
+for (const i of qqq) {
+    let block;
+}
+var x;
+
+
+
 let qqq = function(arg1, arg2, ...) {
     ...
     ...

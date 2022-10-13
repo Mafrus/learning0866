@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Deep functions</title>
+    
+    <script>
+        function allsum(...args) {
+            // сумма любого набора чисел
+            // строки приводятся к числам через parseInt
+            // не числа в наборе пропускаются
+            // если чисел нет совсем, возвращается null
+            
+            args_mapped = args.map(item => parseInt(item));
+            
+            args_filtered = args_mapped.filter(item => !isNaN(item));
+            
+            console.log(args_filtered);
+            
+            let result = null;
+            
+            if (args_filtered.length) {
+                result = args_filtered.reduce((sum, item) => item + sum, 0);
+            }
+            
+            return result;
+        }
+        
+        console.log(allsum(1, 2, 3, '55', '77ы', 0)); //138
+        
+        console.log(allsum('q', 'w', 'e', 0)); //0
+        
+        console.log(allsum('q', 'w', 'e')); //null
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

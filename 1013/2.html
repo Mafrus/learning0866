@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Deep functions</title>
+    
+    <script>
+        function argview(arg1, arg2, arg3='netu takogo', ...ostatok) {
+            console.log(arg1);
+            console.log(arg2);
+            console.log(arg3);
+            console.log(ostatok.length);
+            console.log('=======')
+        }
+        
+        argview(1, 2, 3);
+        argview(1, 2);
+        argview(1, 2, 3, 4, 5, 6);
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Arrays</title>
+    
+    <script>
+        let arr = ['red', 'green', 'blue', 'yellow', 'black'];
+        
+        console.log(arr);
+        
+        /*
+        console.log(arr.join(''));
+        console.log(arr.join(','));
+        console.log(arr.join(' '));
+        console.log(arr.join('-|||-'));
+        console.log('<span>' + arr.join('</span><span>') + '</span>');
+        
+        document.onclick = function(){
+            document.querySelector('body').innerHTML = `<p>${arr.join(',')}</p>`;
+        };
+        */
+        /*
+        let res = arr.forEach(function(element, indexOfElement, wholeArray){
+            console.log('===');
+            console.log('This color is ' + element);
+            console.log('This index is ' + indexOfElement);
+            console.log('Whole array is ' + wholeArray);
+            console.log('===');
+        });
+        console.log('Result is ' + res);
+        */
+        /*
+        let res = arr.map(function(element, indexOfElement, wholeArray){
+            console.log('===');
+            console.log('This color is ' + element);
+            console.log('This index is ' + indexOfElement);
+            console.log('Whole array is ' + wholeArray);
+            console.log(wholeArray[indexOfElement]);
+            console.log('===');
+            //return 'mapped_' + element;
+            return element.length;
+        });
+        //console.log(typeof res);
+        //console.log(Array.isArray(res));
+        //console.log('Result is ' + res);
+        console.log(res);
+        */
+        /*
+        document.onclick = function(){
+            document.querySelector('body').innerHTML = arr.map(item => '<p>' + item + '</p>').join('');
+        };
+        */
+        /*
+        let res = arr.filter(function(element, indexOfElement, wholeArray){
+            console.log('===');
+            console.log('This color is ' + element);
+            //console.log(element.slice(0,2) == 'bl');
+            console.log(element.length - 4);
+            console.log('===');
+            return element.length - 4;
+        });
+        console.log(res);
+        */
+        
+        let res = arr.reduce(function(transfer, element, indexOfElement, wholeArray){
+            console.log('===');
+            console.log(transfer);
+            console.log('This color is ' + element);
+            let new_transfer = transfer + element.length;
+            console.log(new_transfer);
+            console.log('===');
+            return new_transfer;
+        });
+        console.log(res);
+        
+        
+        
+        
+    </script>
+</head>
+<body></body>
+</html>
