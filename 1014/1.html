@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Deep functions</title>
+    
+    <script>
+        function factorial(num) {
+            if (num == 1) {
+                return 1;
+            } else {
+                res = factorial(num - 1);
+                return num * res;
+            }
+        }
+        let factorial_cycle = function(num) {
+            let res = 1;
+            while (num > 1) {
+                res *= num--;
+            }
+            return res;
+        }
+        let newalert = alert;
+        
+        
+        newalert(factorial(6));
+        alert(function(num) {
+            let res = 1;
+            while (num > 1) {
+                res *= num--;
+            }
+            return res;
+        }(6));
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

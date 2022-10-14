@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Decorator</title>
+    
+    <script>
+        function timingDecorator(func) {
+            return function(arg) {
+                let start = new Date().getTime();
+                res = func(arg);
+                console.log('Время исполнения: ' + (new Date().getTime() - start) + ' ms');
+                return res;
+            }
+        }
+        
+        function test(x) {
+            return Math.sin(x);
+        }
+        
+        let testing = timingDecorator(test);
+        
+        console.log(testing(65536));
+    </script>
+</head>
+<body></body>
+</html>

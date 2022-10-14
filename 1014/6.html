@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Timers</title>
+    
+    <script>
+        function func() {
+            console.log(new Date().getTime());
+        }
+        function func1() {
+            for (let i=0; i < 10000000000; i++) ;
+            console.log('one');
+        }
+        function func2() {
+            console.log('two');
+        }
+        function func3() {
+            console.log('three');
+        }
+        /*
+        function timerfunc() {
+            func();
+            setTimeout(timerfunc, 1000);
+        }
+        setTimeout(timerfunc, 1000);
+        */
+        /*
+        setInterval(func1, 1100);
+        setInterval(func2, 1200);
+        setInterval(func3, 1300);
+        */
+        
+        //func1();
+        setTimeout(func1);
+        func2();
+        func3();
+        
+        
+        /*let timer1 = setInterval(func, 1000);
+        console.log(timer1);
+        /*let timer2 = setTimeout(func, 1000);
+        console.log(timer2);
+        let timer3 = setTimeout(func, 1000);
+        console.log(timer3);*/
+        
+        //timer = setInterval(func, 1000);
+        
+        console.log('Start!');
+        
+        /*
+        console.log(timer);
+        setTimeout(function(){
+            clearInterval(timer);
+            console.log('Stop!');
+        }, 10000);
+        */
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

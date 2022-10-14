@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Closure</title>
+    
+    <script>
+        /*
+        function myfunc() {
+            let counter = 0;
+            alert(`Done ${counter++}!`);
+        }
+        */
+        /*
+        let counter = 0;
+        function myfunc() {
+            alert(`Done ${counter++}!`);
+        }
+        */
+        function anotherfunc() {
+            let counter = 0;
+            function myfunc() {
+                alert(`Done ${counter++}!`);
+            }
+            return myfunc;
+        }
+        let myfunc = anotherfunc();
+        
+        
+        
+        
+    </script>
+</head>
+<body></body>
+</html>
