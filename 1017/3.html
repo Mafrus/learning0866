@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Свойства и атрибуты</title>
+        
+        <style>
+            #outer {
+                width: 600px;
+                height: 600px;
+                margin: 100px;
+                background: pink;
+            }
+            .red {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+            .blue {
+                width: 200px;
+                height: 200px;
+                margin: 100px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="outer">
+            <div class="red"></div>
+            <div class="blue" style="background: blue;">
+                <input name="checker" type="checkbox" checked>
+            </div>
+        </div>
+        
+        <script>
+            let one = document.querySelector('#outer');
+            let two = document.querySelector('.red');
+            let thr = document.querySelector('.blue');
+            let inp = document.querySelector('input');
+            
+            console.log(one.getAttribute('id'));
+            console.log(one.id);
+            console.log(thr.getAttribute('style'));
+            console.log(thr.style);
+            console.log(inp.getAttribute('checked'));
+            console.log(inp.checked);
+            
+        </script>
+    </body>
+</html>
