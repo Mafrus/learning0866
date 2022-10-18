@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Events</title>
+        
+        <style>
+            .red {
+                margin: 100px;
+                padding: 100px;
+                width: 300px;
+                background: red;
+            }
+            .green {
+                padding: 100px;
+                width: 100px;
+                background: green;
+            }
+            .blue {
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <a href="https://ya.ru" onclick="alert('12345');return false;">Link to Yandex</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="red">
+            <div class="green">
+                <div class="blue"></div>
+            </div>
+        </div>
+        
+        <script>
+            let red = document.querySelector('.red');
+            let green = document.querySelector('.green');
+            let blue = document.querySelector('.blue');
+            
+            //red.addEventListener('click', event => console.log('red'), true);
+            red.addEventListener('click', event => console.log('red up'));
+            //green.addEventListener('click', event => console.log('green'), true);
+            green.addEventListener('click', event => console.log('green up'));
+            blue.addEventListener('click', (event) => {
+                //event.stopPropagation();
+                //event.preventDefault();
+                //event.stopImmediatePropagation();
+                console.log('blue');
+            });
+            blue.addEventListener('click', event => console.log('blue up'));
+            
+            /*
+            document.querySelector('a').addEventListener('click', function(e){
+                //e.preventDefault();
+                //e.stopImmediatePropagation();
+                alert('12345');
+                return false;
+            });
+            */
+        </script>
+    </body>
+</html>

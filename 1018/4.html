@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Events</title>
+        
+        <style>
+            div {
+                position: fixed;
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="top:100px;left:100px;"></div>
+        
+        <script>
+            let elem = document.querySelector('div');
+            let x, y, deltaX, deltaY;
+            
+            elem.addEventListener('mousedown', function(e){
+                this.classList.add('inuse');
+                y = this.getBoundingClientRect().top;
+                x = this.getBoundingClientRect().left;
+                deltaX = e.clientX - x;
+                deltaY = e.clientY - y;
+            });
+            elem.addEventListener('mouseup', function(){
+                this.classList.remove('inuse');
+            });
+            elem.addEventListener('mousemove', function(e){
+                if (this.classList.contains('inuse')) {
+                    this.style.left = (e.clientX - deltaX) + 'px';
+                    this.style.top = (e.clientY - deltaY) + 'px';
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Свойства и атрибуты</title>
+        
+        <style>
+            .outer {
+                width: 600px;
+                height: 600px;
+                margin: 100px;
+                background: pink;
+            }
+            .red {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+            .green {
+                width: 150px;
+                height: 150px;
+                background: green;
+            }
+            .blue {
+                width: 200px;
+                height: 200px;
+                margin: 100px;
+                background: lightblue;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="outer">
+            <div class="red"></div>
+            <!-- before beforebegin -->
+            <!-- replaceWith вместо!!! outerHTML --><div class="blue">
+                <!-- prepend afterbegin -->
+                <p>Вставляем сюда</p>
+                <!-- append beforeend -->
+            </div>
+            <!-- after afterend -->
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <script>
+            let first = document.querySelector('.outer');
+            let red = document.querySelector('.red');
+            let blue = document.querySelector('.blue');
+            
+            let green = document.createElement('div');
+            green.className = 'green';
+            //blue.replaceWith(green);
+            
+            [].forEach.apply(document.querySelectorAll('div'), [item => item.style.border = '1px dotted black']);
+            [].forEach.apply(document.querySelectorAll('div'), [item => item.title = item.className]);
+            
+            blue.append(green);
+            
+            //green.parentNode.removeChild(green);
+            //green.remove();
+            /*
+            let doppel = blue.cloneNode();
+            red.before(doppel);
+            */
+            /*
+            green.classList.add("red");
+            green.classList.remove("green");
+            */
+            /*
+            //console.log(first.offsetParent);
+            console.log(first.clientWidth);
+            console.log(first.clientHeight);
+            
+            //console.log(red.offsetParent);
+            console.log(red.clientWidth);
+            console.log(red.clientHeight);
+            
+            //console.log(blue.offsetParent);
+            console.log(blue.clientWidth);
+            console.log(blue.clientHeight);
+            
+            //console.log(green.offsetParent);
+            console.log(green.clientWidth);
+            console.log(green.clientHeight);
+            */
+            
+            first.onclick = function(event) {
+                console.log(event);
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Шахматы</title>
+        
+        <style>
+            table {
+                border-collapse: collapse;
+                outline: 1px solid black;
+                width: 920px;
+            }
+            td {
+                height: 100px;
+                width: 100px;
+                text-align: center;
+                font-size: 60px;
+            }
+            tr:nth-child(even) td:nth-child(odd),
+            tr:nth-child(odd) td:nth-child(even) {
+                background: gray;
+            }
+            th {
+                background: lightgray;
+            }
+            tr:first-child th, tr:last-child th {
+                height: 50px;
+            }
+            th:first-child, th:last-child {
+                width: 50px;
+            }
+            .td {
+                background: gray;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <table>
+            <tr>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>7</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>6</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>&#9812;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+        </table>
+        
+        <script>
+            let arr = document.querySelectorAll('td');
+            document.querySelector('table').addEventListener('click', function(event) {
+                //console.log(this);
+                //console.log(event.target);
+                //console.dir(event.target);
+                //console.log([].indexOf.call(arr, event.target));
+                if (event.target.tagName.toLowerCase() == 'td') {
+                    let idx = [].indexOf.call(arr, event.target);
+                    //let vert = 8 - Math.floor(idx / 8);
+                    //let vert = '87654321'[Math.floor(idx / 8)];
+                    let vert = [8, 7, 6, 5, 4, 3, 2, 1][Math.floor(idx / 8)];
+                    let hor = 'ABCDEFGH'[idx % 8];
+                    //let hor = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][idx % 8];
+                    console.log(hor + vert);
+                }
+            });
+        </script>
+    </body>
+</html>
