@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Hover VS Events</title>
+        
+        <style>
+            .red {
+                width: 212px;
+                padding: 50px;
+                margin: 100px;
+                background: red;
+            }
+            .green {
+                width: 106px;
+                padding: 50px;
+                background: green;
+            }
+            .blue {
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+            div {
+                border: 3px solid black;
+            }
+            .hov:hover {
+                border-color: yellow;
+            }
+            .hovered {
+                border-color: pink;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="red nohov">
+            <div class="green nohov">
+                <div class="blue nohov"></div>
+            </div>
+        </div>
+        
+        
+        <div class="red hov">
+            <div class="green hov">
+                <div class="blue hov"></div>
+            </div>
+        </div>
+        
+        <script>
+            let blocks = document.querySelectorAll('.nohov');
+            for (let item of blocks) {
+                item.addEventListener('mouseenter', function(){
+                    this.classList.add('hovered');
+                });
+                item.addEventListener('mouseleave', function(){
+                    this.classList.remove('hovered');
+                });
+            }
+        </script>
+    </body>
+</html>

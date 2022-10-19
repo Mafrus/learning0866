@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Events</title>
+        
+        <style>
+            form {
+                margin: 50px;
+                width: 500px;
+            }
+            fieldset {
+                margin: 50px;
+                width: 400px;
+            }
+            label {
+                display: block;
+                margin: 25px;
+            }
+            :focus {
+                outline: 2px dashed black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <form>
+            <fieldset>
+                <label>
+                    Your name
+                    <input type="text" name="name" autocomplete="off">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password">
+                </label>
+                <label>
+                    Comment
+                    <textarea name="comment"></textarea>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    <input type="checkbox" name="checker1" value="yes">
+                    Check the box
+                </label>
+                <label>
+                    <input type="checkbox" name="checker2" value="yes">
+                    Check the box
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    <input type="radio" name="checker3" value="var1">
+                    Check the box
+                </label>
+                <label>
+                    <input type="radio" name="checker3" value="var2">
+                    Check the box
+                </label>
+                <label>
+                    <input type="radio" name="checker3" value="var3">
+                    Check the box
+                </label>
+            </fieldset>
+            <fieldset>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        
+        <div id="block" tabindex="1">12345</div>
+        
+        <script>
+            //let namevar = document.getElementsByName('name')[0];
+            let formvar = document.forms[0];
+            //let inpvar = document.getElementsByTagName('input');
+            let fieldvar = formvar.password;
+            let radiovar = formvar.checker3;
+            
+            //namevar.addEventListener('focus', e => console.log('focus', e));
+            //namevar.addEventListener('blur', e => console.log('blur', e));
+            //[].forEach.call(inpvar, item => item.addEventListener('input', e => {console.log(e.currentTarget);console.dir(item.name)}));
+            fieldvar.addEventListener('focus', e => e.target.type = 'text');
+            fieldvar.addEventListener('blur', e => e.target.type = 'password');
+            
+            for (let item of radiovar) {
+                item.addEventListener('click', function(e){
+                    console.log(e.target.value);
+                });
+            }
+            document.getElementById('block').addEventListener('mouseover', e => e.target.focus());
+            fieldvar.addEventListener('mouseover', e => e.target.focus());
+            document.getElementById('block').focus();
+        </script>
+    </body>
+</html>

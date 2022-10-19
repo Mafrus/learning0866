@@ -1,0 +1,292 @@
+diff --git a/contacts.html b/contacts.html
+index 066ac99..7585ea8 100644
+--- a/contacts.html
++++ b/contacts.html
+@@ -41,26 +41,26 @@
+                 </section>
+             
+                 <section>
+-                    <div class = "message">
++                    <div class="message">
+                         <form action="" method="GET" name="form1">
+                             <fieldset>
+                                 <h3>Send Us Message</h3>
+                                 <h4>Full Name</h4>                   
+-                                 <input type = "text" name =  "name" placeholder = "Your Name"></input>
++                                 <input type="text" name="name" placeholder="Your Name"></input>
+                                  <h4>Email</h4> 
+-                                 <input type = "email" name = "email" placeholder = "Your Email"></input>
++                                 <input type="email" name="email" placeholder="Your Email"></input>
+                                  <h4>Message</h4>
+-                                <textarea name = "message" placeholder = "Your Message" cols = "48" rows = "9"></textarea><br>
+-                                <button type = "button" name = "submit">Submit</input>
++                                <textarea name="message" placeholder="Your Message" cols="48" rows="9"></textarea><br>
++                                <button type="submit">Submit</input>
+                             </fieldset>
+                         </form>
+                     </div>
+                 </section>
+             </div>
+-            <div class = "map">
+-                <div class = "container">
+-                    <img src = 'images/map1.jpg' alt = "map">
+-                </div>
++            <div class="map">
++                <!-- <div class = "container"> -->
++                    <img src='images/map1.jpg' alt="map">
++                <!-- </div> -->
+             </div>
+             
+         </main>
+diff --git a/css/styles.css b/css/styles.css
+index fcffd42..cf8abc2 100644
+--- a/css/styles.css
++++ b/css/styles.css
+@@ -242,44 +242,58 @@ main h2{
+         /* блок из 3 картинок в 2 строки*/
+ .grid {
+     display: grid;
++    width: 100%;
+     gap: 32px;
+     grid-template-areas: 'a a' 'b c';
+     padding-bottom: 112px;
+ }
++.grid > div {
++    position: relative;
++}
++.grid > div > h4 {
++    position: absolute;
++}
++.grid > div > img {
++    width: 100%;
++    display: block;
++}
+ 
+ .first {
+-    width: 1140px;
+-    height: 480px;
++    /*width: 1140px;
++    height: 480px;*/
+     border-radius: 10px;
+     grid-area: a;
+-    background: url('../images/smart.png') center no-repeat;
+-    background-size: cover;
++    /*background: url('../images/smart.png') center no-repeat;
++    background-size: cover;*/
+ }
+ .first h4{
+     text-align: right;
+-    margin: 64px 64px auto auto;
++    top: 64px;
++    right: 64px;
+ }
+ .second {
+-    width: 554px;
+-    height: 417px;
++    /*width: 554px;
++    height: 417px;*/
+     border-radius: 10px;
+     grid-area: b;
+-    background: url('../images/mask.png') center no-repeat;
+-    background-size: cover;
++    /*background: url('../images/mask.png') center no-repeat;
++    background-size: cover;*/
+ }
+ .second h4{
+-    margin: 32px auto auto 32px;
++    top: 32px;
++    left: 32px;
+ }
+ .third {
+-    width: 554px;
+-    height: 417px;
++    /*width: 554px;
++    height: 417px;*/
+     border-radius: 10px;
+     grid-area: c;
+-    background: url('../images/mask2.png') center no-repeat;
+-    background-size: cover;
++    /*background: url('../images/mask2.png') center no-repeat;
++    background-size: cover;*/
+ }
+ .third h4{
+-    margin: 32px auto auto 32px;
++    top: 32px;
++    left: 32px;
+ }
+ 
+ /*CONTACT US*/
+@@ -370,48 +384,37 @@ main h2{
+     color: #1F3F68;
+     margin: 32px 0 8px;
+ }
+-.message [name = "name"]{
+-    box-sizing: border-box;
++input, textarea {
+     opacity: 0.4;
+-    border: 1px solid #356EAD;
+-    border-radius: 10px;
+-    line-height: 67px;
+-}
+-.message [name = "email"]{
+     box-sizing: border-box;
+-    opacity: 0.4;
+-    border: 1px solid #356EAD;
++    width: 100%;
++    border: 1px solid rgb(53,110,173);
+     border-radius: 10px;
+-    line-height: 67px;
++    padding: 20px 35px;
++    font: 300 16px/30px 'Roboto';
++    letter-spacing: 0.04em;
+ }
+-.message [name = "message"]{
+-    box-sizing: border-box;
+-    opacity: 0.4;
+-    border: 1px solid #356EAD;
+-    border-radius: 10px;
+-    padding-top: 21px;    
++textarea {
++    height: 144px;
+ }
+-.message [name = "submit"]{
+-    box-sizing: border-box;
++.message button {
+     background: #5A98D0;
+     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+     border-radius: 10px;
+     text-transform: uppercase;
+-    width: 428px;
++    width: 100%;
+     height: 72px;
+     font-weight: 500;
+     font-size: 16px;
+     letter-spacing: 0.04em;
+ }
+-input, textarea {
+-    text-indent: 42px;
+-}
+ .map{
+     width: 940px;
+     height: 480px;
+     padding-bottom: 113px;
+     margin:0 auto;
+ }
++
+ /* footer */
+ .liner {
+     height: 0;
+@@ -519,25 +522,29 @@ main h2{
+     margin: 0px 89px 64px;
+     color: #222222;
+ }
++
++
+ .first {
+-    width: 704px;
+-    height: 297px;
++    /*width: 704px;
++    height: 297px;*/
+ }  
+ .second {
+-    width: 336px;
+-    height: 253px;
++    /*width: 336px;
++    height: 253px;*/
+ }
+ .second h4{
+-    margin: 19px auto auto 19px;
++    top: 19px;
++    left: 19px;
+     font-size: 28px;
+     line-height: 46px;
+ }
+ .third {
+-    width: 336px;
+-    height: 253px;
++    /*width: 336px;
++    height: 253px;*/
+ }
+ .third h4{
+-    margin: 19px auto auto 19px;
++    top: 19px;
++    left: 19px;
+     font-size: 28px;
+     line-height: 46px;
+ }
+@@ -586,7 +593,7 @@ main h2{
+     letter-spacing: 0.04em;
+     margin-bottom: 26px;
+     text-transform: uppercase;
+-    padding-right: 70%;
++    /*padding-right: 70%;*/
+ }
+ .message h4 {
+     font-size: 16px;
+@@ -599,6 +606,7 @@ main h2{
+ .message [name = "submit"]{
+     margin: 58px auto 56px; /*вернуть 72px auto 56px после того как поправлю высоту textarea>*/
+ }
++/*
+ .map{
+     width: 100%;
+     height: 392px;
+@@ -611,6 +619,7 @@ main h2{
+ .map img{
+     margin-bottom: 64px;
+ }
++*/
+     /*footer*/
+     footer {
+         height: 654px;
+@@ -644,6 +653,22 @@ main h2{
+     }
+ }
+ 
++@media screen and (max-width:960px) {
++    .map{
++        width: 100%;
++        height: 392px;
++        padding-bottom: 64px;
++        position: relative;
++        overflow: hidden;
++    }
++    .map > img {
++        height: 392px;
++        position: absolute;
++        margin-left: -384px;
++        left: 50%;
++        top: 0;
++    }
++}
+ @media screen and (max-width:767px) {
+ .container {
+     margin: 0 20px;
+diff --git a/index.html b/index.html
+index 7852f03..e2590a9 100644
+--- a/index.html
++++ b/index.html
+@@ -61,17 +61,22 @@
+                 <h2 class = "h2finished">Our Finished Project</h2> <!--заголовок + р-->
+                 <p class="finished">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+             </div>
+-            <div class="container grid"> <!--блок с гридами-->
++            <div class="container"> <!--блок с гридами-->
++            <div class="grid"> <!--блок с гридами-->
+                 <div class="first"><!--верхний широкий -->
++                    <img src="images/smart.png" alt="">
+                     <h4>Smart Home Installation</h4>
+                 </div>
+                 <div class="second"><!--левый меньший-->
++                    <img src="images/mask.png" alt="">
+                     <h4>Sparklite App</h4>
+                 </div>
+                 <div class="third"><!--правый меньший-->
++                    <img src="images/mask2.png" alt="">
+                    <h4>Car-Rapetition App</h4>
+                 </div>
+             </div>
++            </div>
+         </main>
+         
+         <footer>
