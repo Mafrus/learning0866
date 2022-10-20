@@ -135,16 +135,19 @@
             document.querySelector('.oneonx').addEventListener('click', function(){
                 if (!errorflag) {
                     render(1/scr.innerHTML);
+                    emptyflag = true;
                 }
             });
             document.querySelector('.square').addEventListener('click', function(){
                 if (!errorflag) {
                     render(scr.innerHTML**2);
+                    emptyflag = true;
                 }
             });
             document.querySelector('.sign').addEventListener('click', function(){
                 if (!errorflag) {
                     render(scr.innerHTML * -1);
+                    emptyflag = true;
                 }
             });
             document.querySelector('.point').addEventListener('click', function(){
