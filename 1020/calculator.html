@@ -89,8 +89,31 @@
         
         <script>
             let scr = document.querySelector('.screen');
+            let errorflag = false;
             
             
+            
+            
+            
+            function render(num) {
+                if (isNaN(num) || (Math.abs(num) >= 10000000000000)) {
+                    errorflag = true;
+                    scr.innerHTML = 'ERROR!';
+                } else {
+                    if (Math.abs(num) >= 1) {
+                        scr.innerHTML = parseFloat(num.toPrecision(13)); // 123456.123456
+                    } else if (Math.abs(num) >= 0.000001) {
+                        scr.innerHTML = parseFloat(num.toFixed(12)); // 0.0000012345
+                    } else {
+                        num = num.toFixed(12); // 0.0000000001
+                        while (num.match(/^0\.\d*0$/)) {
+                            num = num.slice(0, -1);
+                        }
+                        if (num.match(/^0\.$/)) num = num.slice(0, -1); // 0.
+                        scr.innerHTML = num;
+                    }
+                }
+            }
         </script>
     </body>
 </html>
