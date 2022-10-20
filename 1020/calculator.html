@@ -90,11 +90,66 @@
         <script>
             let scr = document.querySelector('.screen');
             let errorflag = false;
+            let emptyflag = true;
+            let memory = null;
+            let action = null;
             
             
             
+            document.querySelector('.clear').addEventListener('click', function(){
+                scr.innerHTML = 0;
+                errorflag = false;
+                emptyflag = true;
+            });
+            document.querySelector('.eval').addEventListener('click', function(){
+                if ((memory !== null) && action && !errorflag) {
+                    evaluate();
+                    memory = null;
+                    action = null;
+                    emptyflag = true;
+                }
+            });
+            document.querySelectorAll('.action').forEach(item => item.addEventListener('click', function(e){
+                if (!errorflag) {
+                    if ((memory !== null) && action) {
+                        evaluate();
+                    }
+                    memory = +scr.innerHTML;
+                    action = e.target.dataset.action;
+                    emptyflag = true;
+                }
+            }));
+            document.querySelectorAll('.digit').forEach(item => item.addEventListener('click', function(e){
+                if (!errorflag) {
+                    if (emptyflag || (scr.innerHTML == '0')) {
+                        scr.innerHTML = e.target.innerHTML;
+                        emptyflag = false;
+                    } else {
+                        if (scr.innerHTML.replace(/\D/g, '').length < 13) {
+                            scr.innerHTML += e.target.innerHTML;
+                        }
+                    }
+                }
+            }));
             
             
+            
+            function evaluate() {
+                switch (action) {
+                    case 'divide':
+                        render(memory / +scr.innerHTML);
+                    break;
+                    case 'multiple':
+                        render(memory * +scr.innerHTML);
+                    break;
+                    case 'minus':
+                        render(memory - +scr.innerHTML);
+                    break;
+                    case 'plus':
+                        render(memory + +scr.innerHTML);
+                    break;
+                }
+            }
             function render(num) {
                 if (isNaN(num) || (Math.abs(num) >= 10000000000000)) {
                     errorflag = true;
