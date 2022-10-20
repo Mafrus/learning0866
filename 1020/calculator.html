@@ -59,6 +59,9 @@
                 background: green;
                 font-size: 50px;
             }
+            .action {
+                font-size: 40px;
+            }
         </style>
     </head>
     
@@ -93,8 +96,6 @@
             let emptyflag = true;
             let memory = null;
             let action = null;
-            
-            
             
             document.querySelector('.clear').addEventListener('click', function(){
                 scr.innerHTML = 0;
@@ -131,8 +132,33 @@
                     }
                 }
             }));
-            
-            
+            document.querySelector('.oneonx').addEventListener('click', function(){
+                if (!errorflag) {
+                    render(1/scr.innerHTML);
+                }
+            });
+            document.querySelector('.square').addEventListener('click', function(){
+                if (!errorflag) {
+                    render(scr.innerHTML**2);
+                }
+            });
+            document.querySelector('.sign').addEventListener('click', function(){
+                if (!errorflag) {
+                    render(scr.innerHTML * -1);
+                }
+            });
+            document.querySelector('.point').addEventListener('click', function(){
+                if (!errorflag) {
+                    if (emptyflag || (scr.innerHTML == '0')) {
+                        scr.innerHTML = '0.';
+                        emptyflag = false;
+                    } else {
+                        if (!scr.innerHTML.includes('.')) {
+                            scr.innerHTML += '.';
+                        }
+                    }
+                }
+            });
             
             function evaluate() {
                 switch (action) {
