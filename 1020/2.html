@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Objects, Classes</title>
+    
+    <script>
+        function Car(name, speed) {
+            this.name = name;
+            this.speed = speed;
+            
+            this.start = function(){
+                console.log(this.speed);
+            }
+        }
+        
+        let fiat = {
+            name: 'FIAT',
+            speed: 200
+        }
+        Car.prototype = fiat;
+        
+        fiat.stop = () => console.log('It stops!');
+        
+        let lada = new Car('21099', 180);
+        
+        let niva = {
+            __proto__: lada
+        };
+        
+        //niva.__proto__ = lada;
+        
+        //niva.speed = 120;
+        /*
+        niva.start();
+        lada.start();
+        
+        lada.speed = 200;
+        
+        niva.start();
+        lada.start();
+        */
+        /*
+        console.log(lada.__proto__);
+        console.log(niva.__proto__);
+        */
+        
+        niva.stop();
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

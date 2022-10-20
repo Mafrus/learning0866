@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Objects, Classes</title>
+    
+    <script>
+        function Animal(name, food) {
+            this.name = name;
+            this.food = food;
+            this.gender = (this.name == 'cow') ? 'She' : 'He';
+            
+            this.test = function(){
+                console.log(`This is ${this.name}. ${this.gender} eats ${this.food}.`);
+            }
+            
+            /*
+            Object.defineProperty(this, 'test', {
+                get() {
+                    return `This is ${this.name}. ${this.gender} eats ${this.food}.`;
+                },
+            });
+            */
+        }
+        
+        let cnt = 0;
+        
+        class NewAnimal {
+            type = 'animal';
+            counter = ++cnt;
+            
+            constructor(name, food){
+                this.name = name;
+                this.food = food;
+                this.gender = (this.name == 'cow') ? 'She' : 'He';
+            }
+            test(){
+                console.log(`This is ${this.name}. ${this.gender} eats ${this.food}.`);
+            }
+        }
+        
+        let cat = new NewAnimal('cat', 'milk');
+        let dog = new NewAnimal('dog', 'meat');
+        let cow = new NewAnimal('cow', 'grass');
+        
+        /*
+        //Animal.test = function(){
+        Animal.prototype.test = function(){
+            console.log(`This is ${this.name}. ${this.gender} eats ${this.food}.`);
+        }
+        */
+        
+        class NewRabbit extends NewAnimal {
+            //name = 'rabbit';
+            constructor(food){
+                super('rabbit', food);
+            }
+        }
+        
+        let rabbit = new NewRabbit('grass');
+        
+        //cat.say = 'Miau!';
+        
+        /*
+        let rabbit = {};
+        rabbit.__proto__ = cat;
+        
+        rabbit.test();
+        
+        rabbit.food = 'grass';
+        
+        rabbit.test();
+        */
+        
+        /*
+        console.log(Object.getOwnPropertyDescriptor(cat, 'name'));
+        Object.defineProperty(cat, 'name', {
+            value: "Murzik",
+            writable: false,
+            enumerable: false,
+            configurable: false
+        })
+        console.log(Object.getOwnPropertyDescriptor(cat, 'name'));
+        */
+        
+        /*
+        console.log(cat.test);
+        console.log(dog.test);
+        console.log(cow.test);
+        */
+        
+        cat.test();
+        dog.test();
+        cow.test();
+        rabbit.test();
+        /*
+        let rabbit = Object.create(dog, {
+            name: {
+                value: 'rabbit'
+            }
+        });
+        */
+        //rabbit.name = 'rabbit';
+        /*
+        let rabbit = {
+            __proto__: dog,
+            name: 'rabbit'
+        };
+        */
+        //rabbit.test();
+    </script>
+</head>
+<body></body>
+</html>
