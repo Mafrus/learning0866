@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Errors</title>
+    
+    <script>
+        try {
+            console.log('start!');
+            //console.log(iks);
+            
+            throw ['Ура, товарищи!!!', 'mine own error'];
+            console.log('move1...');
+        }
+        
+        catch(error) {
+            console.dir(error);
+            //console.log('fixed');
+        }
+        
+        finally {
+            console.log('OK!');
+        }
+        
+        //throw 12345;
+        
+        
+        console.log('move2...');
+        
+        
+    </script>
+</head>
+<body></body>
+</html>

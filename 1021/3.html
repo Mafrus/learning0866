@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Promices</title>
+    
+</head>
+<body>
+    <!-- <button>RESOLVER</button> -->
+    <script>
+        let promise = new Promise(function(resolve, reject) {
+            //setTimeout(function(){resolve()},1000);
+            
+            let state = confirm();
+            
+            if (state) {
+                resolve();
+            } else {
+                reject();
+            }
+        });
+
+        /*console.log(1);
+        console.log(11);
+        console.log(111);
+        console.log(1111);
+        console.log(11111);
+        console.log(22222);
+        console.log(33333);
+        console.log(44444);
+        console.log(55555);
+        console.log(66666);*/
+        
+        promise.then(
+            function(result){
+                console.log('Получилось!!!')
+            },
+            function(error){
+                console.log('Не получилось...')
+                return promise.reject();
+            }
+        ).then(
+            function(result){
+                console.log('+ Получилось!!!')
+            }
+        ).then(
+            function(result){
+                console.log('++ Получилось!!!')
+                //return promise.reject();
+            }
+        ).then(
+            function(result){
+                console.log('+++ Получилось!!!')
+            }
+        ).then(
+            function(result){
+                console.log('++++ Получилось!!!')
+            }
+        ).catch(
+            function(error){
+                console.log('Совсем не получилось...')
+            }
+        ).finally(
+            function(result){
+                console.log('А этот код выполняется всегда.')
+            }
+        );
+        
+    </script>
+</body>
+</html>
