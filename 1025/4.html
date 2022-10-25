@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Events</title>
+        
+        <style>
+            body {
+                margin: 0;
+                width: 500px;
+                padding: 100px;
+                display: flex;
+                justify-content: space-between;
+            }
+            div {
+                width: 100px;
+                height: 100px;
+            }
+            .red {
+                background: red;
+            }
+            .green {
+                background: green;
+            }
+            .blue {
+                background: blue;
+            }
+        </style>
+        
+        <script src="jquery-3.6.1.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="red"></div>
+        <div class="green"></div>
+        <!-- <div class="blue"></div> -->
+        
+        <script>
+            $('div').click(function(){console.log(this.className)});
+            $('div').on('click', function(){console.log(this)});
+            $(document).on('click', 'div', function(){console.log('OGOGO!!!')});
+            
+            let elem = document.createElement('div');
+            elem.className = 'blue';
+            $('body').append(elem);
+            </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Animation of loading</title>
+        
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                height: 100%;
+                
+            }
+            p {
+                opacity: 1;
+            }
+            div {
+                height: 100px;
+                width: 100px;
+                background: red;
+            }
+            .loading > p {
+                opacity: 0;
+            }
+            .loading > div {
+                background: url('preloader.gif') center center no-repeat;
+            }
+        </style>
+        
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            $(function(){
+                setTimeout(() => $('body').removeClass('loading'), 2000);
+            });
+        </script>
+    </head>
+    
+    <body class="loading">
+        <p>LOADED!</p>
+        <div></div>
+    </body>
+</html>

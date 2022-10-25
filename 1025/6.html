@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Promise</title>
+        
+        <script>
+            let test;
+            let pro = new Promise(function(resolve, reject) {
+                setTimeout(function(){
+                    test = Math.floor(Math.random() * 2);
+                    console.log(1);
+                    if (test == 1) {
+                        resolve(test);
+                    } else {
+                        reject('error');
+                    }
+                });
+            });
+            pro.then(function() {
+                setTimeout(function(){
+                    test = Math.floor(Math.random() * 2);
+                    console.log(2);
+                    if (test == 1) {
+                        return Promise.resolve(test);
+                    } else {
+                        return Promise.reject('error');
+                    }
+                });
+            }).then(function() {
+                setTimeout(function(){
+                    test = Math.floor(Math.random() * 2);
+                    console.log(3);
+                    if (test == 1) {
+                        return Promise.resolve(test);
+                    } else {
+                        return Promise.reject('error');
+                    }
+                });
+            }).then(function() {
+                setTimeout(function(){
+                    test = Math.floor(Math.random() * 2);
+                    console.log(4);
+                    if (test == 1) {
+                        return Promise.resolve(test);
+                    } else {
+                        return Promise.reject('error');
+                    }
+                });
+            }).then(function() {
+                setTimeout(function(){
+                    test = Math.floor(Math.random() * 2);
+                    console.log(5);
+                    if (test == 1) {
+                        return Promise.resolve(test);
+                    } else {
+                        return Promise.reject('error');
+                    }
+                });
+            }).then(function(){alert('You win!')}).catch(function(){alert('You loose!')})
+
+            /*
+            let pro = new Promise(function(resolve, reject){
+                //resolve(123);
+                reject(123);
+            });
+            */
+            /*
+            pro.then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            });
+            pro.then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            });
+            pro.then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            });
+            */
+            /*
+            pro.then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            },
+            function(error){
+                console.log('ERROR IN THEN');
+                //return error;
+                return new Promise(function(res,rej){
+                    rej('error here!');
+                });
+                repturn;
+            }).then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            }).then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            }).then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            }).then(function(data){
+                data *= 2;
+                console.log('resolved', data);
+                return data;
+            }).catch(function(error){
+                console.log(error);
+                console.log('ERROR');
+            });
+            */
+            
+        </script>
+    </head>
+    
+    <body></body>
+</html>

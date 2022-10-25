@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Events</title>
+        
+        <style>
+            div {
+                position: fixed;
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+        </style>
+        
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            let deltaX, deltaY;
+            
+            $(function(){
+                $('div').mousedown(function(e){
+                            $(this).addClass('inuse');
+                            deltaX = e.clientX - $(this).position().left;
+                            deltaY = e.clientY - $(this).position().top;
+                        })
+                        .mouseup(function(e){
+                            $(this).removeClass('inuse');
+                        })
+                        .mousemove(function(e){
+                            if ($(this).hasClass('inuse')) {
+                                $(this).css('left', (e.clientX - deltaX) + 'px');
+                                $(this).css('top', (e.clientY - deltaY) + 'px');
+                            }
+                        })
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div></div>
+    </body>
+</html>
