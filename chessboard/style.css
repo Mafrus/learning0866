@@ -8,6 +8,8 @@ td {
     width: 100px;
     text-align: center;
     font-size: 60px;
+    cursor: default;
+    user-select: none;
 }
 tr:nth-child(even) td:nth-child(odd),
 tr:nth-child(odd) td:nth-child(even) {

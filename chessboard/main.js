@@ -26,9 +26,30 @@ const FIGURESYMBOL = { // набор изображений для фигур
         black: '&#9823;'
     }
 };
+const FIGUREMOVE = {
+    king(a, b) {
+        return (Math.abs(a.x - b.x) <= 1) && (Math.abs(a.y - b.y) <= 1);
+    },
+    queen(a, b) {
+        return false;
+    },
+    rook(a, b) {
+        return false;
+    },
+    bishop(a, b) {
+        return false;
+    },
+    knight(a, b) {
+        return false;
+    },
+    pawn(a, b) {
+        return false;
+    },
+};
 let figureset = []; // коллекция фигур, стоящих сейчас на доске
 let startpos = [ // описание начальной расстановки фигур
     ['king','white','e1'],
+    ['king','black','e8'],
     ['queen','white','d1'],
     ['pawn','white','c2'],
     ['rook','black','a8'],
@@ -63,9 +84,14 @@ function getCellFromPosition(position) { // по координатам "бук�
 }
 function getCellPosition(cell) { // по самому полю находим его координаты "буква + цифра"
     let idx = [].indexOf.call(arr, cell);
-    let vert = [8, 7, 6, 5, 4, 3, 2, 1][Math.floor(idx / 8)]; // строки
+    let vert = '87654321'[Math.floor(idx / 8)]; // строки
     let hor = 'abcdefgh'[idx % 8]; // столбцы
     return hor + vert;
+}
+function getCellCoords(pos) {
+    a = 'abcdefgh'.indexOf(pos[0]);
+    b = '87654321'.indexOf(pos[1]);
+    return {x: a, y: b};
 }
 function checkFigureInCell(cell) { // проверяем, есть ли фигура с координатами, как у нашего поля.
     let pos = getCellPosition(cell);
@@ -82,21 +108,45 @@ function useCell(cell) {
             document.querySelector('.cellfrom').classList.remove('cellfrom');
             document.querySelector('.cellto').classList.remove('cellto');
         }
-        cell.classList.add('cellfrom');
-        console.log('from -->');
+        if (checkFigureInCell(cell)) {
+            cell.classList.add('cellfrom');
+        }
     } else { // если есть помеченное стартовое поле, помечаем текущее поле финишным
         if (cell.classList.contains('cellfrom')) {
             cell.classList.remove('cellfrom');
-            console.log('canceled');
-            return;
+        } else {
+            if (canIMove(cell)) {
+                cell.classList.add('cellto');
+                figureMove();
+            }
         }
-        cell.classList.add('cellto');
-        console.log('--> to');
     }
-    console.log(getCellPosition(cell));
-    console.log(checkFigureInCell(cell));
 }
-
+function canIMove(cellto) {
+    let cellfrom = document.querySelector('.cellfrom');
+    let figure = checkFigureInCell(cellfrom);
+    let aim = checkFigureInCell(cellto);
+    // надо добавить проверки на пешку и на рокировку
+    if ((!aim) || (aim.color != figure.color)) {
+        return FIGUREMOVE[figure.name](getCellCoords(getCellPosition(cellfrom)), getCellCoords(getCellPosition(cellto)));
+    }
+    return false;
+}
+function figureMove() {
+    let cellfrom = document.querySelector('.cellfrom');
+    let cellto = document.querySelector('.cellto');
+    let figure = checkFigureInCell(cellfrom);
+    let aim = checkFigureInCell(cellto);
+    let logsymbol = '-';
+    if (aim) {
+        figureset.splice(figureset.indexOf(aim), 1);
+        logsymbol = ':';
+    }
+    figure.changePos(cellto);
+    console.log(`${figure.color} ${figure.name}: ${getCellPosition(cellfrom)} ${logsymbol} ${getCellPosition(cellto)}.`);
+    document.querySelector('.cellfrom').classList.remove('cellfrom');
+    document.querySelector('.cellto').classList.remove('cellto');
+}
 
 
 /* classes */
@@ -112,4 +162,11 @@ class ChessFigure { // каждый объект класса - шахматна
     clear(){ // убираем фигуру с доски
         getCellFromPosition(this.position).innerHTML = '';
     }
+    changePos(cell){ // меняем позицию фигуры
+        this.clear();
+        this.position = getCellPosition(cell);
+        this.render();
+    }
 }
+
+
