@@ -1,0 +1,73 @@
+diff --git a/21.10.2022/Igra_ugadai_chislo.html b/21.10.2022/Igra_ugadai_chislo.html
+index e8c9908..8177d04 100644
+--- a/21.10.2022/Igra_ugadai_chislo.html
++++ b/21.10.2022/Igra_ugadai_chislo.html
+@@ -81,7 +81,7 @@
+ 			</div>
+ 			
+ 			<div class='inner2'>	
+-				<h1 class='text2'>Введите чсло от 0 до 100</h1>
++				<h1 class='text2'>Введите число от 0 до 100</h1>
+ 				<input type="text"  class="nasheChislo">
+ 				<h2 class='text3'>Количество попыток: </h2>
+ 				<button class='knopka2'>Ок</button>
+@@ -96,13 +96,14 @@
+ 			let text_2 = document.querySelector('.text2');
+ 			let inner1 = document.querySelector('.inner1');
+ 			let inner2 = document.querySelector('.inner2');
+-			let nasheChislo = document.querySelector('.nasheChislo').value;
++			let nasheChislo = document.querySelector('.nasheChislo'); // мы получаем значение из пустого поля ввода. и потом мы новые значения уже не получаем.
+ 			let zagadanoeChislo;
+ 			let kolichestvoPopytok = document.querySelector('.text3');
+-			kolichestvoPopytok = 0;
++			kolichestvoPopytok.innerHTML = "Количество попыток: 0";
+ 			
+ 			knopka_1.addEventListener ('click', function start() {
+-				zagadanoeChislo = Math.floor(Math.random() * 100 + 1);	
++				zagadanoeChislo = Math.floor(Math.random() * 100 + 1);
++                //console.log(zagadanoeChislo);
+ 				inner1.style.display = 'none';
+ 				inner2.style.display = 'block';
+ 				
+@@ -110,28 +111,28 @@
+ 				
+ 				knopka_2.onclick  = function(){
+ 					
+-					kolichestvoPopytok.innerHTML = kolichestvoPopytok++;
++                    //console.log(nasheChislo.value);
++                    //console.log(kolichestvoPopytok.innerHTML.split(': ')[1]);
++                    
++					kolichestvoPopytok.innerHTML = "Количество попыток: " + (+kolichestvoPopytok.innerHTML.split(': ')[1] + 1);
+ 					
+-					if (isNaN(nasheChislo)) { 
+-						text_2.innerHTML.replace('Введите чсло от 0 до 100', 'Надо ввести  именно число');
++					if (isNaN(nasheChislo.value)) { 
++						text_2.innerHTML = 'Введите число от 0 до 100', 'Надо ввести  именно число';
+ 					}
+-					else if (nasheChislo == zagadanoeChislo) {
+-						text_2.innerHTML.replace('Введите чсло от 0 до 100', 'Вы угадали c ' + kolichestvoPopytok + 'попыток !' );
++					else if (nasheChislo.value == zagadanoeChislo) {
++						text_1.innerHTML = 'Вы угадали c ' + kolichestvoPopytok.innerHTML.split(': ')[1] + ' попыток!\nСыграем еще раз?';
++                        inner1.style.display = 'block';
++                        inner2.style.display = 'none';
+ 					}
+-					else if (nasheChislo > zagadanoeChislo) {
+-						text_2.innerHTML.replace('Введите чсло от 0 до 100', 'Надо меньше');
++					else if (nasheChislo.value > zagadanoeChislo) {
++						text_2.innerHTML = 'Введите число от 0 до 100.\nНадо меньше';
+ 					}
+ 					else  {
+-						text_2.innerHTML.replace('Введите чсло от 0 до 100', 'Надо больше');
++						text_2.innerHTML = 'Введите число от 0 до 100.\nНадо больше';
+ 					}
+ 				}
+ 			
+-			inner1.style.display = 'block';
+-			inner2.style.display = 'none';
+ 			
+-		    text_1.innerHTML.replace('Для начала игры нажмите кнопку', 'Сыграем еще раз?');
+-			knopka_1.addEventListener ('click', function start() {
+-			}); 
+ 				
+ 			
+ 			

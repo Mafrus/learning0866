@@ -31,7 +31,7 @@ const FIGUREMOVE = {
         return (Math.abs(a.x - b.x) <= 1) && (Math.abs(a.y - b.y) <= 1);
     },
     queen(a, b) {
-        return false;
+        return FIGUREMOVE.rook(a, b) || FIGUREMOVE.bishop(a, b);
     },
     rook(a, b) {
         return false;
@@ -40,9 +40,21 @@ const FIGUREMOVE = {
         return false;
     },
     knight(a, b) {
+        return ((Math.abs(a.x - b.x) == 1) && (Math.abs(a.y - b.y) == 2)) || ((Math.abs(a.x - b.x) == 2) && (Math.abs(a.y - b.y) == 1));
+    },
+    whitepawngo(a, b) {
         return false;
     },
-    pawn(a, b) {
+    blackpawngo(a, b) {
+        return false;
+    },
+    whitepawnbeat(a, b) {
+        return false;
+    },
+    blackpawnbeat(a, b) {
+        return false;
+    },
+    castling(a, b) {
         return false;
     },
 };
@@ -154,6 +166,7 @@ class ChessFigure { // каждый объект класса - шахматна
     constructor(name, color, position){
         this.name = name;
         this.color = color;
+        this.firststep = true;
         this.position = position.toLowerCase();
     }
     render(){ // показываем фигуру на доске
@@ -165,6 +178,7 @@ class ChessFigure { // каждый объект класса - шахматна
     changePos(cell){ // меняем позицию фигуры
         this.clear();
         this.position = getCellPosition(cell);
+        this.firststep = false;
         this.render();
     }
 }

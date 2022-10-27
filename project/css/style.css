@@ -98,6 +98,9 @@ input, textarea {
 }
 button {
     cursor: pointer;
+	border: none;
+	outline: none;
+    background: none;
 }
 html, body {
     height: 100%;
@@ -108,12 +111,12 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-a:hover {
+a:hover > span {
     text-decoration: underline;
 }
 .container {
     margin: 0 auto;
-    
+    width: 1320px;
 }
 
 /* main */
@@ -123,13 +126,160 @@ body {
     color: #666;
     display: flex;
     flex-direction: column;
+    min-width: 320px;
 }
 header {
     flex: none;
+    background: rgb(13,110,253);
+    color: #fff;
 }
 main {
     flex: 1 1 auto;
 }
 footer {
     flex: none;
+    background: rgb(108,117,125);
+    color: #fff;
+}
+
+/* modals */
+.screener {
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
+.modal {
+    background: white;
+    border-radius: 10px;
+    position: fixed;
+    left: calc(50% - 240px);
+    width: 400px;
+    top: 200px;
+    padding: 40px;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: red;
+    font-size: 40px;
+    line-height: 40px;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+}
+.close:active {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+}
+#citymodal p {
+    color: blue;
+    cursor: pointer;
+}
+#citymodal p:hover {
+    text-decoration: underline wavy blue;
+}
+
+/* header */
+#city {
+    cursor: pointer;
+    font-weight: 500;
+}
+.topmenu {
+    padding: 10px 0;
+}
+.topmenu a {
+    display: inline-block;
+    margin-left: 20px;
+    color: #eee;
+}
+.topmenu a:first-child {
+    margin-left: 0;
+}
+.topmenu a::before {
+    content: '\220E';
+    padding-right: 20px;
+}
+.topmenu a:first-child::before {
+    display: none;
+}
+
+
+/* action */
+.action {
+    background: red;
+    padding: 30px;
+    color: yellow;
+}
+.action .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 60px;
+}
+.action p {
+    width: 50%;
+    text-align: center;
+}
+.actiontimer {
+    display: block;
+}
+
+/* slider */
+.slider {
+    padding: 30px;
+}
+.slider_desk {
+    border: 1px solid black;
+    width: 419px;
+    height: 572px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+}
+.slider_block {
+    border: 1px solid black;
+    width: 417px;
+    height: 570px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    transition: left 1.5s;
+    background: #fff;
+}
+.slider_block.current {
+    left: 0;
+    z-index: 1;
+}
+.slider_block.next {
+    left: 419px;
+    z-index: 1;
+}
+.slider_block.prev {
+    left: -419px;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* adaptive */
+@media (max-width: 1400px) {
+    .container {
+        width: auto;
+        margin: 0 40px;
+    }
 }
