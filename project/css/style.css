@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Thin.woff2') format('woff2');
   font-weight: 100;
@@ -119,6 +125,37 @@ a:hover > span {
     width: 1320px;
 }
 
+/* icons */
+.icon::before {
+    font-family: 'icomoon';
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: white;
+    text-align: center;
+}
+/*.icon:hover::before {
+    color: lightblue;
+}
+.logo::before {
+    content: '\e900';
+}
+.login::before {
+    content: '\e902';
+}
+.order::before {
+    content: '\e901';
+}
+.cat::before {
+    content: '\e903';
+}*/
+.to_left::before {
+    content: '\e905';
+}
+.to_right::before {
+    content: '\e904';
+}
+
 /* main */
 body {
     font: 20px/30px 'Roboto';
@@ -232,7 +269,11 @@ footer {
 
 /* slider */
 .slider {
+    width: 421px;
+    height: 574px;
     padding: 30px;
+    margin: 0 auto;
+    position: relative;
 }
 .slider_desk {
     border: 1px solid black;
@@ -254,12 +295,13 @@ footer {
 }
 .slider_block.next {
     left: 419px;
-    z-index: 0;
-    transition: left .5s;
+    z-index: 1;
 }
 .slider_block.prev {
     left: -419px;
-    z-index: 0;
+    z-index: 1;
+}
+.slider_block.was_current {
     transition: left .5s;
 }
 .slider_block.current {
@@ -267,11 +309,55 @@ footer {
     z-index: 1;
     transition: left .5s;
 }
-
-
-
-
-
+.slider button {
+    position: absolute;
+    border: 1px solid lightblue;
+    height: 40px;
+    width: 60px;
+    border-radius: 8px;
+    top: 267px;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 40px;
+    color: lightblue;
+    opacity: 0;
+}
+.slider .to_left {
+    left: 40px;
+}
+.slider .to_right {
+    right: 40px;
+}
+.slider_points {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1;
+}
+.slider_points span {
+	flex: none;
+    border-radius: 50%;
+	border: 1px solid lightblue;
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+    opacity: 0;
+}
+.slider_points span.active {
+    background: lightblue;
+}
+.slider_desk:hover ~ button,
+.slider button:hover,
+.slider_desk:hover ~ .slider_points span,
+.slider_points:hover span {
+    opacity: 1;
+}
 
 
 

@@ -56,12 +56,16 @@ $(function(){
         });
     });
     
-    actiontimer();
-    let timer0 = setInterval(function(){
-        if (!actiontimer()) clearInterval(timer0);
-    }, 1000);
+    if ($('.action').length) {
+        actiontimer();
+        let timer0 = setInterval(function(){
+            if (!actiontimer()) clearInterval(timer0);
+        }, 1000);
+    }
     
-    makeSlider('slider1', 3000);
+    $('.slider').each(function(){
+        makeSlider(this.id, 2000);
+    });
     
     console.log('just loaded');
 });
