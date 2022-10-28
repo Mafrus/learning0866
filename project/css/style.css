@@ -250,20 +250,22 @@ footer {
     position: absolute;
     z-index: -1;
     top: 0;
-    transition: left 1.5s;
     background: #fff;
+}
+.slider_block.next {
+    left: 419px;
+    z-index: 0;
+    transition: left .5s;
+}
+.slider_block.prev {
+    left: -419px;
+    z-index: 0;
+    transition: left .5s;
 }
 .slider_block.current {
     left: 0;
     z-index: 1;
-}
-.slider_block.next {
-    left: 419px;
-    z-index: 1;
-}
-.slider_block.prev {
-    left: -419px;
-    z-index: 1;
+    transition: left .5s;
 }
 
 

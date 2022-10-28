@@ -1,0 +1,31 @@
+let r = 'stroka'
+obj['r'] == obj.r
+obj[r] == obj['stroka'] == obj.stroka
+
+
+`<span onclick="sliderGo('${slider_id}', ${i})">*</span>`
+'<span onclick="sliderGo(\'' + slider_id + '\', ' + i + ')">*</span>'
+
+
+    4p    5c    6n
+
+         new 1
+    1+p 4-p
+
+    1p    5c    6n
+
+         -->
+    1+c
+         5+n-c
+
+        1c(p)  5n(6n)
+
+      1-p 5-n 6-n
+
+          1c
+
+        0+p 2+n
+
+    0p    1c     2n
+
+

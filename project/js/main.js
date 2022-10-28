@@ -1,6 +1,4 @@
 /* variables */
-let sliderCursor = 0;
-let slider;
 
 /* functions */
 function getModalWindow(idname) {
@@ -46,37 +44,6 @@ function multiple(num, word1, word2, word3) {
         return word3;
     }
 }
-function makeSlider(slider) {
-    let blocks = slider.find('.slider_block');
-    blocks.eq(0).addClass('current');
-    blocks.eq(1).addClass('next');
-    blocks.eq(blocks.length - 1).addClass('prev');
-    setTimeout(function hlpsld(){
-        sliderGo(slider, 'toleft');
-        setTimeout(hlpsld, 3000);
-    }, 3000);
-}
-function sliderGo(slider, align) {
-    let blocks = slider.find('.slider_block');
-    if (align == 'toleft') {
-        sliderCursor++;
-        if (sliderCursor >= blocks.length) sliderCursor -= blocks.length;
-    } else if (align == 'toright') {
-        sliderCursor--;
-        if (sliderCursor < 0) sliderCursor += blocks.length;
-    } else {
-        sliderCursor = align;
-    }
-    let item = slider.find('.current');
-    blocks.eq(sliderCursor).addClass('current');
-    item.removeClass('current');
-    item = slider.find('.prev');
-    blocks.eq(sliderCursor - 1).addClass('prev');
-    item.removeClass('prev');
-    item = slider.find('.next');
-    blocks.eq((sliderCursor == blocks.length - 1) ? 0 : sliderCursor + 1).addClass('next');
-    item.removeClass('next');
-}
 
 /* on ready */
 $(function(){
@@ -94,8 +61,7 @@ $(function(){
         if (!actiontimer()) clearInterval(timer0);
     }, 1000);
     
-    slider = $('.slider');
-    makeSlider(slider);
+    makeSlider('slider1', 3000);
     
     console.log('just loaded');
 });
