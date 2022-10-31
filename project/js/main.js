@@ -1,4 +1,5 @@
 /* variables */
+let citylist = ['Москва', 'Немосква', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
 
 /* functions */
 function getModalWindow(idname) {
@@ -49,10 +50,23 @@ function multiple(num, word1, word2, word3) {
 $(function(){
     $('#city').click(function(){
         getModalWindow('citymodal');
-        $('.modal').append('<h1>Выберите город:</h1><p>Москва</p><p>Немосква</p><p>Караганда</p><p>Магадан</p><p>Люберцы</p>');
+        $('.modal').append('<h1>Выберите город:</h1><input type="text" id="citysearch" placeholder="Введите часть названия города..."><div class="columns"></div>');
+        for (let city of citylist) {
+            $('.modal .columns').append('<p>' + city + '</p>');
+        }
         $('.modal p').click(function(){
             $('#city span').html($(this).html());
             dropModalWindow();
+        });
+        $('#citysearch').on('input', function(){
+            let namepart = $('#citysearch').val().toLowerCase();
+            $('.modal p').each(function(){
+                if (!this.innerHTML.toLowerCase().includes(namepart)) {
+                    this.style.display = 'none';
+                } else {
+                    this.style.display = 'block';
+                }
+            });
         });
     });
     
@@ -66,6 +80,37 @@ $(function(){
     $('.slider').each(function(){
         makeSlider(this.id, 2000);
     });
+    
+    if ($('.catmenu li li').length) {
+        $('.catmenu li li').slideUp(1); // скрываем все пункты второго уровня
+        $('.catmenu > ul > li').click(function(e){ // ловим клик на пункте первого уровня
+            if ((e.target.tagName != 'A') && (!$(this).find('.open').length)) { // если клик не был по ссылке и вложенный список в этом пункте уже не раскрыт...
+                let here = $(this).find('ul'); // сохраняем указатель на вложенный список в кликнутом пункте 
+                if (here.length) { // если в кликнутом пункте есть вложенный список...
+                    if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                        $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                            $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                            here.find('li').slideDown(1000, function(){ // затем открываем пункты списка по нашему указателю
+                                here.addClass('open'); // и вешаем на него класс open
+                            });
+                        });
+                    } else { // если раскрытого вложенного списка не было...
+                        here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
+                            here.addClass('open'); // и вешаем на него класс open
+                        });
+                    }
+                } else {
+                    if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                        $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                            $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                        });
+                    }
+                }
+            }
+        });
+    }
+    
+    
     
     console.log('just loaded');
 });

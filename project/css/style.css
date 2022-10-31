@@ -120,6 +120,10 @@ a {
 a:hover > span {
     text-decoration: underline;
 }
+h1 {
+    font-size: 40px;
+    line-height: 50px;
+}
 .container {
     margin: 0 auto;
     width: 1320px;
@@ -188,6 +192,7 @@ footer {
     left: 0;
     right: 0;
     cursor: pointer;
+    z-index: 1;
 }
 .modal {
     background: white;
@@ -197,6 +202,7 @@ footer {
     width: 400px;
     top: 200px;
     padding: 40px;
+    z-index: 1;
 }
 .close {
     position: absolute;
@@ -219,6 +225,24 @@ footer {
 }
 #citymodal p:hover {
     text-decoration: underline wavy blue;
+}
+#citysearch {
+    border: 1px solid blue;
+    color: blue;
+    display: block;
+    padding: 5px 15px;
+    margin: 15px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#citysearch::placeholder {
+    color: rgba(0,0,255,.5);
+    font-style: italic;
+}
+.columns {
+    columns: 185px 2;
+    gap: 30px;
 }
 
 /* header */
@@ -244,7 +268,13 @@ footer {
 .topmenu a:first-child::before {
     display: none;
 }
-
+.topmenu .current {
+    cursor: default;
+    font-weight: 700;
+}
+.topmenu .current:hover span {
+    text-decoration: none;
+}
 
 /* action */
 .action {
@@ -357,6 +387,45 @@ footer {
 .slider_desk:hover ~ .slider_points span,
 .slider_points:hover span {
     opacity: 1;
+}
+
+/* catalog */
+.catalog .container {
+    display: flex;
+    gap: 20px;
+}
+.catalog aside {
+    width: 360px;
+    background: green;
+    color: white;
+}
+.catmenu {
+    padding: 20px;
+}
+.catmenu a {
+    color: white;
+}
+.catmenu ul {
+    margin-top: 10px;
+}
+.catmenu > ul > li {
+    padding: 5px 30px 5px 0;
+    border-top: 1px dashed white;
+}
+.catmenu ul ul {
+    margin: 0;
+    position: relative;
+    left: 30px;
+}
+.catmenu ul ul::before {
+    content: '\23f7';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    transition: transform 1s;
+}
+.catmenu .open::before {
+    transform: rotateX(180deg);
 }
 
 
