@@ -393,9 +393,10 @@ footer {
 .catalog .container {
     display: flex;
     gap: 20px;
+    margin-top: 10px;
 }
 .catalog aside {
-    width: 360px;
+    flex: 0 0 360px;
     background: green;
     color: white;
 }
@@ -438,8 +439,30 @@ footer {
 .catmenu.simple .open li {
     display: list-item;
 }
-
-
+.catalog .filters {
+    padding: 20px;
+}
+#slider-range {
+    margin: 20px 0;
+}
+#slider-range .ui-widget-header {
+    background: blue;
+}
+.catalog article {
+    /* display: table; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.cat-item {
+    width: 140px;
+    height: 290px;
+    border: 5px solid red;
+    /*float: left;*/
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    
+}
 
 
 
