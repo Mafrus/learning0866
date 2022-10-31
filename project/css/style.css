@@ -423,11 +423,21 @@ footer {
     top: -30px;
     right: 0;
     transition: transform 1s;
+    cursor: pointer;
 }
 .catmenu .open::before {
     transform: rotateX(180deg);
 }
-
+.catmenu li li {
+    font-size: 14px;
+    line-height: 30px;
+}
+.catmenu.simple li li {
+    display: none;
+}
+.catmenu.simple .open li {
+    display: list-item;
+}
 
 
 

@@ -82,34 +82,56 @@ $(function(){
     });
     
     if ($('.catmenu li li').length) {
-        $('.catmenu li li').slideUp(1); // скрываем все пункты второго уровня
-        $('.catmenu > ul > li').click(function(e){ // ловим клик на пункте первого уровня
-            if ((e.target.tagName != 'A') && (!$(this).find('.open').length)) { // если клик не был по ссылке и вложенный список в этом пункте уже не раскрыт...
-                let here = $(this).find('ul'); // сохраняем указатель на вложенный список в кликнутом пункте 
-                if (here.length) { // если в кликнутом пункте есть вложенный список...
-                    if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
-                        $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
-                            $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
-                            here.find('li').slideDown(1000, function(){ // затем открываем пункты списка по нашему указателю
+        if ($('.catmenu.simple').length) { // если мы хотим простейший аккордеон без сложной анимации
+            $('.catmenu > ul > li').click(function(e){
+                if (e.target.tagName != 'A') {
+                    $('.open').removeClass('open'); // отнимаем класс open у ранее открытого вложенного списка
+                    $(this).find('ul').addClass('open'); // добавляем класс open вложенному списку в кликнутом пункте
+                }
+            });
+        } else { // если мы хотим аккордеон с более красивой анимацией
+            $('.catmenu li li').slideUp(1); // скрываем все пункты второго уровня
+            $('.catmenu > ul > li').click(function(e){ // ловим клик на пункте первого уровня
+                if ((e.target.tagName != 'A') && (!$(this).find('.open').length)) { // если клик не был по ссылке и вложенный список в этом пункте уже не раскрыт...
+                    let here = $(this).find('ul'); // сохраняем указатель на вложенный список в кликнутом пункте 
+                    if (here.length) { // если в кликнутом пункте есть вложенный список...
+                        if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                            $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                                $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                                here.find('li').slideDown(1000, function(){ // затем открываем пункты списка по нашему указателю
+                                    here.addClass('open'); // и вешаем на него класс open
+                                });
+                            });
+                        } else { // если раскрытого вложенного списка не было...
+                            here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
                                 here.addClass('open'); // и вешаем на него класс open
                             });
-                        });
-                    } else { // если раскрытого вложенного списка не было...
-                        here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
-                            here.addClass('open'); // и вешаем на него класс open
-                        });
-                    }
-                } else {
-                    if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
-                        $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
-                            $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
-                        });
+                        }
+                    } else {
+                        if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                            $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                                $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                            });
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
     
+    // if ($('.querymenu').length) {
+        // $( "#acco" ).accordion({
+            // header: ".acco_h",
+            // icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+        // });
+        // $( "#toggle" ).button().on( "click", function() {
+            // if ( $( "#acco" ).accordion( "option", "icons" ) ) {
+                // $( "#acco" ).accordion( "option", "icons", null );
+            // } else {
+                // $( "#acco" ).accordion( "option", "icons", icons );
+            // }
+        // });
+    // }
     
     
     console.log('just loaded');
