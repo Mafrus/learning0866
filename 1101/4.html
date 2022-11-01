@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Cookies</title>
+        
+        <script>
+            function getCookie(name) {
+                var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+            function setCookie(name, content, time) {
+                var updatedCookie = name + '=' + encodeURIComponent(content) + '; path=/; expires=' + time.toUTCString();
+                document.cookie = updatedCookie;
+            }
+
+        </script>
+    </head>
+    
+    <body></body>
+</html>

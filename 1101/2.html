@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>jqXHR</title>
+        
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            //$(function(){
+                $.ajax({
+                    url: 'https://pie.dev/headers',
+                    method: 'get',
+                    //data: {name:'MyObj',weight:100},
+                    complete: function(data){
+                        document.body.append('<h2>'+data+'</h2>');
+                    },
+                    success: function(data){
+                        document.body.append('<h1>'+data+'</h1>');
+                    },
+                    error: function(data){
+                        document.body.append('<h6>'+data+'</h6>');
+                    }
+                });
+            //});
+        </script>
+    </head>
+    
+    <body>
+        
+    </body>
+</html>
