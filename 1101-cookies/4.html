@@ -8,13 +8,15 @@
         <script>
             function getCookie(name) {
                 var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+                //console.log(matches);
                 return matches ? decodeURIComponent(matches[1]) : undefined;
             }
             function setCookie(name, content, time) {
+                // для удаления куки time должно быть моментом времени в прошлом
                 var updatedCookie = name + '=' + encodeURIComponent(content) + '; path=/; expires=' + time.toUTCString();
                 document.cookie = updatedCookie;
             }
-
+            // на локальном файле куки не устанавливаются!
         </script>
     </head>
     

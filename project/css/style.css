@@ -287,7 +287,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    height: 60px;
+    height: 90px;
 }
 .action p {
     width: 50%;
@@ -295,6 +295,12 @@ footer {
 }
 .actiontimer {
     display: block;
+    line-height: 60px;
+}
+.actiontimer span {
+    font-size: 50px;
+    line-height: 60px;
+    vertical-align: top;
 }
 
 /* slider */

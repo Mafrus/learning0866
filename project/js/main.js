@@ -27,7 +27,7 @@ function actiontimer() {
     delta = Math.floor(delta/60);
     let hours = delta % 24;
     let days = Math.floor(delta/24);
-    let helpstr = `${days} ${multiple(days, 'день', 'дня', 'дней')} ${addZero(hours)} ${multiple(hours, 'час', 'часа', 'часов')} ${addZero(minutes)} ${multiple(minutes, 'минута', 'минуты', 'минут')} ${addZero(seconds)} ${multiple(seconds, 'секунда', 'секунды', 'секунд')}`;
+    let helpstr = `<span>${days}</span> ${multiple(days, 'день', 'дня', 'дней')} <span>${addZero(hours)}</span> ${multiple(hours, 'час', 'часа', 'часов')} <span>${addZero(minutes)}</span> ${multiple(minutes, 'минута', 'минуты', 'минут')} <span>${addZero(seconds)}</span> ${multiple(seconds, 'секунда', 'секунды', 'секунд')}`;
     $('.actiontimer').html(helpstr);
     return res;
 }
@@ -50,6 +50,8 @@ function multiple(num, word1, word2, word3) {
 
 /* on ready */
 $(function(){
+    $('#city span').html(localStorage.getItem('city') || 'Москва');
+    
     $('#city').click(function(){
         getModalWindow('citymodal');
         $('.modal').append('<h1>Выберите город:</h1><input type="text" id="citysearch" placeholder="Введите часть названия города..."><div class="columns"></div>');
@@ -57,7 +59,9 @@ $(function(){
             $('.modal .columns').append('<p>' + city + '</p>');
         }
         $('.modal p').click(function(){
-            $('#city span').html($(this).html());
+            let city = $(this).html()
+            $('#city span').html(city);
+            localStorage.setItem('city', city);
             dropModalWindow();
         });
         $('#citysearch').on('input', function(){
