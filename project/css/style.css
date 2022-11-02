@@ -478,6 +478,33 @@ footer {
     
 }
 
+/* product */
+.breadcrumbs {
+    padding: 10px 0;
+    height: 20px;
+}
+.breadcrumbs li {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 20px;
+    margin-right: 10px;
+    position: relative;
+    font-size: 12px;
+    line-height: 20px;
+}
+.breadcrumbs a::after {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 20px;
+    content: '\203a';
+    text-align: center;
+    font-size: 20px;
+    line-height: 16px;
+}
+
 
 
 /* adaptive */

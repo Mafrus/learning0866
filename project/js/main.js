@@ -50,6 +50,10 @@ function multiple(num, word1, word2, word3) {
 
 /* on ready */
 $(function(){
+    $('.topmenu a').each(function(){
+        if (this.href == location.href) this.className = 'current';
+    });
+    
     $('#city span').html(localStorage.getItem('city') || 'Москва');
     
     $('#city').click(function(){
