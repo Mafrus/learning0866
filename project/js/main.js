@@ -169,9 +169,9 @@ $(function(){
             let v1 = +$('#amount1').val();
             let v2 = +$('#amount2').val();
             if (v2 > rangemax) {
-                v1 = rangemax;
+                v2 = rangemax;
             } else if (v2 < rangemin) {
-                v1 = rangemin;
+                v2 = rangemin;
             }
             $('#amount2').val(v2);
             if (v1 > v2) {

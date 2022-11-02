@@ -448,6 +448,14 @@ footer {
 .catalog .filters {
     padding: 20px;
 }
+.filters input {
+    border: 1px solid white;
+    color: white;
+    padding: 2px 5px;
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+}
 #slider-range {
     margin: 20px 0;
 }
