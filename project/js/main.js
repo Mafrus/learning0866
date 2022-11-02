@@ -188,5 +188,25 @@ $(function(){
         $('#amount2').val(rangemax);
     }
     
+    if ($('.images .gallery').length) {
+        // $('.bigimage img').click(function(){
+            // lightbox(this);
+        // });
+        
+        $('.gal_left').click(function(){
+            if (!$(this).hasClass('disabled')) galSlide('right');
+        });
+        
+        $('.gal_right').click(function(){
+            if (!$(this).hasClass('disabled')) galSlide('left');
+        });
+        
+        $('.rail img').click(function(){
+            let attr = $(this).attr('src').split('mini_').join('');
+            $('.bigimage img').attr('src', attr);
+        });
+    }
+    
+    
     console.log('just loaded');
 });

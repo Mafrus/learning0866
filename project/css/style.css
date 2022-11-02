@@ -82,7 +82,8 @@ html, body, body div, div, span, h1, h2, h3, h4, h5, h6,
 p, a, em, img, small, strike, strong, sub, sup, b, u, i,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td, aside,
-section, article, header, footer, main, input, textarea {
+section, article, header, footer, main, input, textarea,
+button {
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -102,12 +103,6 @@ html * {
 input, textarea {
     font: inherit;
 }
-button {
-    cursor: pointer;
-	border: none;
-	outline: none;
-    background: none;
-}
 html, body {
     height: 100%;
 }
@@ -119,6 +114,9 @@ a {
 }
 a:hover > span {
     text-decoration: underline;
+}
+button {
+    cursor: pointer;
 }
 h1 {
     font-size: 40px;
@@ -478,7 +476,7 @@ footer {
     
 }
 
-/* product */
+/* breadcrumbs */
 .breadcrumbs {
     padding: 10px 0;
     height: 20px;
@@ -504,6 +502,80 @@ footer {
     font-size: 20px;
     line-height: 16px;
 }
+
+/* product */
+.product {
+    display: flex;
+    gap: 30px;
+}
+.images {
+    flex: 0 0 470px;
+}
+.bigimage {
+    width: 450px;
+    /*height: 550px;*/
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+    border: 1px solid blue;
+    padding: 9px;
+}
+.gallery {
+    width: 440px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 0 15px;
+    position: relative;
+}
+.gallery button {
+    width: 15px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: blue;
+}
+.gallery .disabled {
+    cursor: default;
+    opacity: .3;
+}
+.gallery button:hover {
+    color: black;
+}
+.gallery .disabled:hover {
+    color: blue;
+}
+.gallery .gal_left {
+    left: 0;
+}
+.gallery .gal_right {
+    right: 0;
+}
+.gallery button span {
+    font: bold 50px/50px 'Roboto';
+    display: inline-block;
+    margin-top: -9px;
+}
+.gallery > div {
+    width: 440px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.gallery .rail {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+}
+
+
+
+
+
+
 
 
 
