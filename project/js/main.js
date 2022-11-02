@@ -51,7 +51,7 @@ function multiple(num, word1, word2, word3) {
 /* on ready */
 $(function(){
     $('.topmenu a').each(function(){
-        if (this.href == location.href) this.className = 'current';
+        if (this.href == location.href.split('#')[0]) this.className = 'current';
     });
     
     $('#city span').html(localStorage.getItem('city') || 'Москва');
@@ -189,9 +189,9 @@ $(function(){
     }
     
     if ($('.images .gallery').length) {
-        // $('.bigimage img').click(function(){
-            // lightbox(this);
-        // });
+        $('.bigimage img').click(function(){
+            lightbox(this);
+        });
         
         $('.gal_left').click(function(){
             if (!$(this).hasClass('disabled')) galSlide('right');

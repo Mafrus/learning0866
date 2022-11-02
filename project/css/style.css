@@ -242,6 +242,15 @@ footer {
     columns: 185px 2;
     gap: 30px;
 }
+#lightbox img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s;
+}
+#lightbox.ready img {
+    opacity: 1;
+}
 
 /* header */
 #city {
@@ -570,8 +579,14 @@ footer {
     left: 0;
     height: 50px;
 }
-
-
+.price {
+    color: red;
+    font-size: 50px;
+    line-height: 70px;
+}
+.price span::after {
+    content: '\20BD'
+}
 
 
 
