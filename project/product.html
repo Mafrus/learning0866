@@ -7,7 +7,7 @@
         
         <title>Карточка товара</title>
         
-        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
         
         <script defer src="js/jquery-3.6.1.min.js"></script>
@@ -28,8 +28,8 @@
                     <a href="index.html"><span>Главная страница</span></a>
                     <a href="catalog.html"><span>Каталог</span></a>
                     <a href="product.html"><span>Товар</span></a>
-                    <a href="#"><span>Корзина</span></a>
-                    <a href="#"><span>Контакты</span></a>
+                    <a href="order.html"><span>Корзина</span></a>
+                    <a href="contacts.html"><span>Контакты</span></a>
                 </nav>
             </section>
         </header>
@@ -62,20 +62,20 @@
             </section>
             
             <section class="container">
-                <div class="product">
+                <div class="product" data-product-id="12345" itemscope itemtype="https://schema.org/Product">
                     <div class="images">
                         <div class="bigimage">
-                            <img src="images/zver.jpg" alt="капибара">
+                            <img src="images/zver.jpg" alt="капибара" itemprop="image">
                         </div>
                         
                         <div class="gallery">
                             <div>
                                 <div class="rail">
-                                    <img src="images/mini_zver.jpg" alt="капибара">
-                                    <img src="images/mini_pelmen.jpg" alt="пельмень">
-                                    <img src="images/mini_doshik.jpg" alt="дошик">
-                                    <img src="images/mini_kniga.jpg" alt="книга">
-                                    <img src="images/mini_misha.jpg" alt="медвед">
+                                    <img src="images/mini_zver.jpg" alt="капибара" itemprop="image">
+                                    <img src="images/mini_pelmen.jpg" alt="пельмень" itemprop="image">
+                                    <img src="images/mini_doshik.jpg" alt="дошик" itemprop="image">
+                                    <img src="images/mini_kniga.jpg" alt="книга" itemprop="image">
+                                    <img src="images/mini_misha.jpg" alt="медвед" itemprop="image">
                                     <img src="images/mini_zver.jpg" alt="капибара">
                                     <img src="images/mini_pelmen.jpg" alt="пельмень">
                                     <img src="images/mini_doshik.jpg" alt="дошик">
@@ -94,9 +94,13 @@
                     </div>
                     
                     <div class="offer">
-                        <h1>Продаваемый товар</h1>
-                        <p class="price"><span>1000</span></p>
-                        <p>Характеристики товара очень хорошие</p>
+                        <h1 itemprop="name">Продаваемый товар</h1>
+                        <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span itemprop="price">1000</span>
+                            <meta itemprop="priceCurrency" content="RUB">
+                        </p>
+                        <button type="button" class="btn btn-danger btn-buy">КУПИТЬ</button>
+                        <p itemprop="description">Характеристики товара очень хорошие</p>
                         <p>Характеристики товара очень хорошие</p>
                         <p>Характеристики товара очень хорошие</p>
                         <p>Характеристики товара очень хорошие</p>

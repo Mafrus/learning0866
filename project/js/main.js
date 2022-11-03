@@ -2,6 +2,29 @@
 let citylist = ['Москва', 'Немосква', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
 let rangemin = 0;
 let rangemax = 300;
+let startbasket = [
+    {
+        id: 1,
+        name: 'ZHABA',
+        price: 2000,
+        quantity: 100,
+        link: ''
+    },
+    {
+        id: 2,
+        name: 'GADIUKA',
+        price: 3000,
+        quantity: 10,
+        link: ''
+    },
+    {
+        id: 111,
+        name: 'Cangaroo',
+        price: 15500,
+        quantity: 1,
+        link: ''
+    }
+];
 
 /* functions */
 function getModalWindow(idname) {
@@ -45,6 +68,25 @@ function multiple(num, word1, word2, word3) {
         return word2;
     } else {
         return word3;
+    }
+}
+function orderReCount() {
+    let point = $('.table');
+    let allsum = 0;
+    point.find('tbody tr').each(function(){
+        let price = +$(this).find('.price').html();
+        let qty = +$(this).find('.qty strong').html();
+        let sum = qty * price;
+        allsum += sum;
+        $(this).find('.sum').html(sum);
+    });
+    point.find('.allsum span').html(allsum);
+}
+function changeOrder(line, num){
+    let newnum = +$(line).find('.qty strong').html() + num;
+    if (newnum > 0) {
+        $(line).find('.qty strong').html(newnum);
+        orderReCount();
     }
 }
 
@@ -207,6 +249,129 @@ $(function(){
         });
     }
     
+    $('.btn-buy').click(function(){
+        let res = {}
+        let aim = $(this).parents('.product');
+        res.id = aim.data('product-id');
+        res.name = aim.find('h1').html();
+        res.price = aim.find('.price span').html();
+        res.quantity = 1
+        res.link = location.href;
+        let basket = JSON.parse(localStorage.getItem('basket'));
+        /*
+        вариант с флагом
+        */
+        if (basket) {
+            let flag = false;
+            for (let item of basket) {
+                if (item.id == res.id) {
+                    item.quantity = +item.quantity + +res.quantity;
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) basket.push(res);
+        } else {
+            basket = [res];
+        }
+        localStorage.setItem('basket', JSON.stringify(basket));
+        /*
+        вариант без флага
+        
+        if (!basket) basket = [];
+        for (let item of basket) {
+            if (item.id == res.id) {
+                item.quantity = +item.quantity + +res.quantity;
+                localStorage.setItem('basket', JSON.stringify(basket));
+                return;
+            }
+        }
+        basket.push(res);
+        localStorage.setItem('basket', JSON.stringify(basket));
+        */
+    });
+    
+    if ('.order') {
+        let point = $('.table tbody');
+        let count = 1;
+        let basket = JSON.parse(localStorage.getItem('basket'));
+        if (!basket) basket = [];
+        basket.push(...startbasket);
+        for (let item of basket) {
+            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name"><a href="'+item.link+'">'+item.name+'</a></td><td class="qty"><span class="minus">&minus;</span><strong>'+item.quantity+'</strong><span class="plus">&plus;</span></td><td class="price">'+item.price+'</td><td class="sum"></td><td class="delete icon">&#xe906;</td></tr>';
+            point.append(hlpstr);
+            count++;
+        }
+        orderReCount();
+        $('.table .plus').click(function(){
+            changeOrder($(this).parents('tr'), 1);
+        });
+        $('.table .minus').click(function(){
+            changeOrder($(this).parents('tr'), -1);
+        });
+        $('.table .delete').click(function(){
+            $(this).parents('tr').remove();
+            if ($('tbody tr').length) {
+                orderReCount();
+            } else {
+                $('.order').addClass('empty');
+            }
+        });
+        $('.order form .submit').click(function(){
+            $('.is-invalid').removeClass('is-invalid');
+            $('.invalid-feedback').remove();
+            let form = document.forms[0];
+            let valid = true;
+            if (!form.name.value) {
+                $('form #name').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должно быть указано имя!</div>');
+                valid = false;
+            }
+            if (!form.addr.value) {
+                $('form #addr').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должен быть указан адрес!</div>');
+                valid = false;
+            }
+            if (!form.phone.value.match(/^((\+7)|(8))?\s?\(?\d{3}\)?\s?\d{3}\-?\d{2}\-?\d{2}$/)) {
+                $('form #phone').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должен быть указан телефон!</div>');
+                valid = false;
+            }
+            if (valid) {
+                let products = [];
+                $('.table tbody tr').each(function(){
+                    let res = {
+                        id: this.dataset.id,
+                        qty: +$(this).find('.qty strong').html()
+                    };
+                    products.push(res);
+                })
+                let data = {
+                    name: form.name.value,
+                    phone: form.phone.value,
+                    mail: form.mail.value,
+                    addr: form.addr.value,
+                    comm: form.comm.value,
+                    date: form.date.value,
+                    order: products
+                };
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                }).then((response) => response.json()).then(function(json){
+                    localStorage.removeItem('basket')
+                    getModalWindow('order');
+                    $('.modal').append('<p>Ваш заказ оформлен под номером ' + json.id + '.</p>');
+                    $('.order').addClass('empty');
+                    form.reset();
+                });
+            }
+        });
+        $('.order .input-group .icon').click(function(){
+            let date = new Date()
+            makeDatePicker(`${date.getFullYear()}-${addZero(+date.getMonth() + 1)}-${addZero(+date.getDate())}`)
+        });
+    }
     
     console.log('just loaded');
 });

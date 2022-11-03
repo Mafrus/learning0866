@@ -81,14 +81,14 @@
 html, body, body div, div, span, h1, h2, h3, h4, h5, h6,
 p, a, em, img, small, strike, strong, sub, sup, b, u, i,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, aside,
-section, article, header, footer, main, input, textarea,
-button {
+aside, section, article, header, footer, main, input,
+textarea, button {
 	margin: 0;
 	padding: 0;
 	border: none;
 	outline: none;
     background: none;
+    box-sizing: content-box;
 }
 ol, ul, li {
 	list-style: none;
@@ -102,6 +102,7 @@ html * {
 }
 input, textarea {
     font: inherit;
+    box-sizing: border-box;
 }
 html, body {
     height: 100%;
@@ -201,6 +202,7 @@ footer {
     top: 200px;
     padding: 40px;
     z-index: 1;
+    display: block;
 }
 .close {
     position: absolute;
@@ -579,20 +581,94 @@ footer {
     left: 0;
     height: 50px;
 }
-.price {
+.product .price {
     color: red;
     font-size: 50px;
     line-height: 70px;
 }
-.price span::after {
+.product .price span::after {
     content: '\20BD'
 }
 
+/* order */
+.order .icon {
+    font-family: 'icomoon' !important;
+    cursor: pointer;
+}
+.table tfoot th {
+    border-bottom: none;
+}
+.table .allsum span {
+    color: red;
+}
+.table .allsum span::after {
+    content: '\20\20BD'
+}
+.table .index {
+    text-align: center;
+    width: 50px;
+}
+.table .qty {
+    text-align: center;
+    width: 200px;
+}
+.table .price {
+    text-align: center;
+    width: 100px;
+}
+.table .sum {
+    text-align: center;
+    width: 100px;
+}
+.table td.delete {
+    text-align: center;
+    width: 100px;
+}
+.table .qty strong {
+    min-width: 100px;
+    text-align: center;
+    display: inline-block;
+    user-select: none;
+}
+.table .qty span {
+    border-radius: 50%;
+    border: 1px solid black;
+    background: blue;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+.table .qty .minus {
+    margin-right: 10px;
+}
+.table .qty .plus {
+    margin-left: 10px;
+}
+#order {
+    height: 30px;
+    text-align: center;
+}
+.container.empty,
+.empty .container {
+    display: none;
+}
+.empty .container.empty {
+    display: block;
+}
 
-
-
-
-
+/* calendar */
+#calendar {
+    height: auto;
+}
+.dp_grid {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+}
 
 /* adaptive */
 @media (max-width: 1400px) {
